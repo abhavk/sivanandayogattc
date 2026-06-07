@@ -507,28 +507,6 @@ nav.is-visible {
     linear-gradient(135deg, var(--canvas) 0%, var(--canvas-alt) 100%);
 }
 
-.schedule::before {
-  content: "";
-  position: absolute;
-  top: 3rem;
-  right: -4rem;
-  width: 14rem;
-  height: 14rem;
-  border: 1px solid rgba(135, 109, 45, 0.22);
-  border-radius: 50%;
-}
-
-.schedule::after {
-  content: "";
-  position: absolute;
-  bottom: -4rem;
-  left: 8%;
-  width: 9rem;
-  height: 9rem;
-  border-radius: 50%;
-  background-color: rgba(149, 126, 108, 0.16);
-}
-
 .schedule .container {
   position: relative;
   z-index: 1;
@@ -567,17 +545,6 @@ nav.is-visible {
   inset: 0 0 auto;
   height: 6px;
   background: linear-gradient(90deg, var(--khaki), var(--light-brown));
-}
-
-.schedule-card::after {
-  content: "";
-  position: absolute;
-  right: -3.5rem;
-  bottom: -3.5rem;
-  width: 10rem;
-  height: 10rem;
-  border: 1px solid rgba(135, 109, 45, 0.18);
-  border-radius: 50%;
 }
 
 .schedule-card h3 {
