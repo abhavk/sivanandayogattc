@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Group yoga practice field</title>
+  <desc id="desc">Abstract figures practicing yoga in a golden field.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8efdf"/>
+      <stop offset=".5" stop-color="#ead9be"/>
+      <stop offset="1" stop-color="#9faf79"/>
+    </linearGradient>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 .16"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="900" height="1100" fill="url(#bg)"/>
+  <rect width="900" height="1100" filter="url(#noise)"/>
+  <circle cx="692" cy="224" r="132" fill="#ffcf55"/>
+  <g fill="none" stroke="#171512" stroke-width="2" opacity=".12">
+    <path d="M-30 620c176-82 334-90 474-23s302 63 486-12"/>
+    <path d="M-30 702c176-82 334-90 474-23s302 63 486-12"/>
+    <path d="M-30 784c176-82 334-90 474-23s302 63 486-12"/>
+    <path d="M-30 866c176-82 334-90 474-23s302 63 486-12"/>
+  </g>
+  <g fill="#171512">
+    <g transform="translate(232 604)">
+      <circle cx="0" cy="-92" r="31"/>
+      <path d="M-18-55h36l25 111h-86Z"/>
+      <path d="M-46 57c-68 18-104 40-108 66-3 17 8 29 26 27 58-6 111-27 158-63Zm92 0c68 18 104 40 108 66 3 17-8 29-26 27-58-6-111-27-158-63Z"/>
+    </g>
+    <g transform="translate(475 667)" opacity=".86">
+      <circle cx="0" cy="-118" r="35"/>
+      <path d="M-21-78h42l28 139h-98Z"/>
+      <path d="M-53 62c-77 21-120 47-127 79-4 20 8 34 30 32 68-7 130-32 185-74Zm106 0c77 21 120 47 127 79 4 20-8 34-30 32-68-7-130-32-185-74Z"/>
+    </g>
+    <g transform="translate(680 618)" opacity=".72">
+      <circle cx="0" cy="-84" r="27"/>
+      <path d="M-16-50h32l23 100h-78Z"/>
+      <path d="M-41 51c-58 15-90 34-94 57-3 15 7 26 23 24 50-5 96-23 137-55Zm82 0c58 15 90 34 94 57 3 15-7 26-23 24-50-5-96-23-137-55Z"/>
+    </g>
+  </g>
+  <path d="M0 936c168-76 324-87 467-33s287 44 433-30v227H0Z" fill="#596d3d"/>
+  <path d="M0 1000c176-48 336-49 480-3s284 36 420-31v134H0Z" fill="#171512"/>
+</svg>

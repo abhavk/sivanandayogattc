@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Sunrise yoga practice</title>
+  <desc id="desc">A warm abstract illustration of a seated yoga practitioner before a rising sun.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff4d6"/>
+      <stop offset=".45" stop-color="#f4a51c"/>
+      <stop offset="1" stop-color="#596d3d"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="40%" r="36%">
+      <stop offset="0" stop-color="#fff9ed"/>
+      <stop offset=".48" stop-color="#ffcf55"/>
+      <stop offset="1" stop-color="#b83b24"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 .18"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="900" height="1100" fill="url(#sky)"/>
+  <rect width="900" height="1100" filter="url(#grain)" opacity=".45"/>
+  <circle cx="450" cy="374" r="265" fill="url(#sun)" opacity=".92"/>
+  <g fill="none" stroke="#171512" stroke-width="3" opacity=".14">
+    <circle cx="450" cy="374" r="324"/>
+    <circle cx="450" cy="374" r="390"/>
+    <path d="M-40 728c183-84 339-91 468-21s299 68 510-8"/>
+    <path d="M-20 785c172-62 329-61 470 3s295 56 462-23"/>
+  </g>
+  <path d="M0 767c139-52 266-57 381-14s234 37 356-16 200-67 163 363H0Z" fill="#171512" opacity=".9"/>
+  <g transform="translate(450 635)" fill="#fff9ed">
+    <circle cx="0" cy="-185" r="58"/>
+    <path d="M-30-124c22-21 41-31 58-31s36 10 58 31l-40 151h-36l-10-84-10 84h-36Z"/>
+    <path d="M-59 47c-75 37-139 58-193 63-23 2-35-11-35-28 0-17 13-28 37-35 50-16 98-37 144-64 16-9 30-6 41 9Zm118 0c75 37 139 58 193 63 23 2 35-11 35-28 0-17-13-28-37-35-50-16-98-37-144-64-16-9-30-6-41 9Z"/>
+    <path d="M-157 134c60-41 112-60 157-58s97 21 157 58c-52 32-104 48-157 48s-105-16-157-48Z" opacity=".82"/>
+  </g>
+  <g fill="#ffcf55" opacity=".8">
+    <circle cx="104" cy="132" r="8"/>
+    <circle cx="760" cy="180" r="5"/>
+    <circle cx="802" cy="514" r="9"/>
+    <circle cx="124" cy="562" r="6"/>
+  </g>
+</svg>
