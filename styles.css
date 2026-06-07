@@ -347,14 +347,16 @@ nav.is-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.6;
-  transition: transform 0.7s ease, opacity 0.5s ease;
+  filter: brightness(1.12) contrast(1.04) saturate(1.08);
+  opacity: 0.86;
+  transition: transform 0.7s ease, opacity 0.5s ease, filter 0.5s ease;
 }
 
 .bento-item:hover img,
 .bento-item.is-open img,
 .bento-item:focus-visible img {
-  opacity: 0.18;
+  filter: brightness(0.85) contrast(1.05) saturate(1.02);
+  opacity: 0.34;
   transform: scale(1.05);
 }
 
