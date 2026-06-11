@@ -249,6 +249,8 @@ nav.is-visible {
   display: block;
   width: 100%;
   height: auto;
+  opacity: 0.92;
+  filter: brightness(0) invert(1) drop-shadow(0 2px 10px rgba(31, 20, 2, 0.35));
 }
 
 .hero-content {
