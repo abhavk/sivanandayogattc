@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title">
+  <title id="title">Dr Niraj Prakash</title>
+  <rect width="800" height="1000" fill="#ebe5d9"/>
+  <rect x="24" y="24" width="752" height="952" fill="none" stroke="#957e6c" stroke-opacity="0.35" stroke-width="2"/>
+  <g fill="none" stroke="#957e6c" stroke-opacity="0.55" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" transform="translate(160 170) scale(0.75)">
+    <path d="M320 116c56 54 82 111 82 172s-27 108-82 143c-55-35-82-82-82-143s26-118 82-172Z"/>
+    <path d="M201 199c73 13 123 44 151 94s28 104 0 162c-65-2-114-24-145-67s-33-106-6-189Z"/>
+    <path d="M439 199c-73 13-123 44-151 94s-28 104 0 162c65-2 114-24 145-67s33-106 6-189Z"/>
+    <path d="M123 321c81-14 145-3 191 33s68 85 67 148c-62 19-117 13-164-17s-78-85-94-164Z"/>
+    <path d="M517 321c-81-14-145-3-191 33s-68 85-67 148c62 19 117 13 164-17s78-85 94-164Z"/>
+    <path d="M175 501h290"/>
+    <path d="M236 554h168"/>
+  </g>
+  <text x="400" y="780" text-anchor="middle" font-family="Marcellus, Georgia, 'Times New Roman', serif" font-size="130" letter-spacing="14" fill="#3f3114">NP</text>
+</svg>
