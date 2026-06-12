@@ -232,6 +232,35 @@ nav.is-visible {
   inset: 0;
   background: linear-gradient(to top, var(--black-amber) 0%, transparent 60%);
 }
+.hero-butterfly {
+  position: absolute;
+  top: 7rem;
+  left: clamp(1.5rem, 10vw, 9rem);
+  z-index: 15;
+  width: clamp(42px, 5vw, 64px);
+  opacity: 0.9;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 16px rgba(31, 20, 2, 0.3));
+  animation: butterfly-float 7s ease-in-out infinite;
+}
+
+.hero-butterfly svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes butterfly-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-4deg);
+  }
+
+  50% {
+    transform: translate3d(12px, -14px, 0) rotate(5deg);
+  }
+}
+
 
 .hero-accreditation {
   position: absolute;
@@ -1896,6 +1925,12 @@ footer {
 
   .nav-links .nav-cta {
     padding: 0.85rem 1.25rem;
+  }
+
+  .hero-butterfly {
+    top: 5.25rem;
+    left: 1rem;
+    width: 40px;
   }
 
   .hero-content {
