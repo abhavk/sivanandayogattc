@@ -860,7 +860,6 @@ nav.is-visible {
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
 }
 
-.teacher-card:hover,
 .teacher-card.is-open,
 .teacher-card:focus-visible {
   border-color: rgba(135, 109, 45, 0.55);
@@ -870,6 +869,14 @@ nav.is-visible {
 
 .teacher-card:focus-visible {
   box-shadow: 0 0 0 3px var(--khaki), 0 24px 48px rgba(31, 20, 2, 0.14);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .teacher-card:hover {
+    border-color: rgba(135, 109, 45, 0.55);
+    box-shadow: 0 24px 48px rgba(31, 20, 2, 0.14);
+    transform: translateY(-6px);
+  }
 }
 
 .teacher-img {
@@ -893,11 +900,17 @@ nav.is-visible {
   object-position: right center;
 }
 
-.teacher-card:hover .teacher-img img,
 .teacher-card.is-open .teacher-img img,
 .teacher-card:focus-visible .teacher-img img {
   filter: grayscale(0%) contrast(1.05);
   transform: scale(1.04);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .teacher-card:hover .teacher-img img {
+    filter: grayscale(0%) contrast(1.05);
+    transform: scale(1.04);
+  }
 }
 
 .teacher-info {
@@ -933,11 +946,17 @@ nav.is-visible {
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
 }
 
-.teacher-card:hover .teacher-expand,
 .teacher-card.is-open .teacher-expand,
 .teacher-card:focus-visible .teacher-expand {
   opacity: 0.5;
   transform: rotate(225deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .teacher-card:hover .teacher-expand {
+    opacity: 0.5;
+    transform: rotate(225deg);
+  }
 }
 
 .teacher-bio {
@@ -967,17 +986,26 @@ nav.is-visible {
   border-top: 1px solid rgba(149, 126, 108, 0.25);
 }
 
-.teacher-card:hover .teacher-bio,
 .teacher-card.is-open .teacher-bio,
 .teacher-card:focus-visible .teacher-bio {
   grid-template-rows: 1fr;
   opacity: 1;
 }
 
-.teacher-card:hover .teacher-bio-inner p,
 .teacher-card.is-open .teacher-bio-inner p,
 .teacher-card:focus-visible .teacher-bio-inner p {
   transform: translateY(0);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .teacher-card:hover .teacher-bio {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+
+  .teacher-card:hover .teacher-bio-inner p {
+    transform: translateY(0);
+  }
 }
 
 .teacher-tags {
