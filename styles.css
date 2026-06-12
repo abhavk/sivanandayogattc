@@ -270,6 +270,11 @@ nav.is-visible {
   text-shadow: 0 1px 6px rgba(31, 20, 2, 0.75);
 }
 
+.hero-eyebrow {
+  font-size: clamp(1.5rem, 3vw, 2.75rem);
+  line-height: 1;
+}
+
 .hero-title {
   margin-bottom: 2rem;
   color: var(--dark-section-heading);
@@ -303,10 +308,6 @@ nav.is-visible {
 }
 
 @media (min-width: 1025px) {
-  .hero-title-block p {
-    font-size: 1.1rem;
-  }
-
   .meta-item .label {
     font-size: 0.95rem;
   }
