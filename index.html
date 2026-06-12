@@ -1401,14 +1401,23 @@
             event.stopPropagation();
             const isOpen = card.classList.contains("is-open");
 
-            expandableCards.forEach((item) => item.classList.remove("is-open"));
+            expandableCards.forEach((item) => {
+              item.classList.remove("is-open");
+              item.blur();
+            });
+
             card.classList.toggle("is-open", !isOpen);
+            card.blur();
           });
         });
 
         document.addEventListener("click", () => {
-          expandableCards.forEach((card) => card.classList.remove("is-open"));
+          expandableCards.forEach((card) => {
+            card.classList.remove("is-open");
+            card.blur();
+          });
         });
+      }
       }
 
       const topLevelFaqs = Array.from(document.querySelectorAll(".faq-featured, .faq-category"));
