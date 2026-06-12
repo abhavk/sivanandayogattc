@@ -1,1 +1,3 @@
 {"cwd":"/home/ec2-user/sivanandayogattc","has_image":false,"prompt":"--- Deployment context (same data as the site dashboard) ---\nProject: sivanandayogattc\nDomain: sivanandayogattc.com\nLIVE (production): v133 — https://sivanandayogattc.com\nPREVIEW (staging): v133 — https://preview.sivanandayogattc.com\nRecent tagged versions:\n  - v133 [2026-06-12] more\n--- End deployment context ---\n\n\nadd a small floating butterfly in white svg at the top of the page","provider":"openai","session_id":"1781256067711-5E927B","size":"big","ts":"2026-06-12T09:21:07","type":"session_start"}
+{"content":"Add floating white butterfly to hero","ts":"2026-06-12T09:21:35","type":"agent_response"}
+{"status":"ok","ts":"2026-06-12T09:21:35","type":"session_end"}
