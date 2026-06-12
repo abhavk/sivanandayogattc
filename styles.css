@@ -275,6 +275,10 @@ nav.is-visible {
   line-height: 1;
 }
 
+.hero-title-block .hero-eyebrow {
+  font-weight: 400;
+}
+
 .hero-title {
   margin-bottom: 2rem;
   color: var(--dark-section-heading);
@@ -429,6 +433,10 @@ nav.is-visible {
 
 .bento-item img.bento-img-meditation {
   transform: rotate(-90deg) scale(1.58);
+}
+
+.bento-item img.bento-img-hatha-yoga {
+  transform: rotate(-90deg) scale(1.61);
 }
 
 .bento-item:hover img,
