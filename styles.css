@@ -1380,8 +1380,8 @@ textarea::placeholder {
 
 .testimonial-card {
   flex: 0 0 100%;
-  min-height: 520px;
-  padding: 3rem;
+  min-height: 460px;
+  padding: 2.5rem;
   border: 1px solid rgba(149, 126, 108, 0.35);
   background-color: var(--canvas-alt);
   scroll-snap-align: center;
@@ -2077,7 +2077,7 @@ footer {
 
   .testimonial-card {
     min-height: auto;
-    padding: 2rem;
+    padding: 1.75rem;
   }
 
   .testimonial-arrow {
