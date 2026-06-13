@@ -193,7 +193,7 @@ nav.is-visible {
   height: auto;
 }
 
-.logo span {
+.logo-text > span {
   color: var(--warm-gold);
   font-family: var(--font-body);
   font-size: 0.72rem;
