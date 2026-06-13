@@ -160,7 +160,6 @@ nav.is-visible {
 }
 
 .logo {
-  position: relative;
   display: inline-flex;
   align-items: flex-start;
   color: var(--canvas);
@@ -175,9 +174,9 @@ nav.is-visible {
 }
 
 .nav-butterfly {
-  position: absolute;
-  top: -0.3rem;
-  left: calc(100% - 0.15rem);
+  position: fixed;
+  top: 0.45rem;
+  right: clamp(0.75rem, 1.6vw, 1.5rem);
   z-index: 101;
   width: clamp(28px, 2.8vw, 40px);
   opacity: 0.92;
@@ -1960,8 +1959,8 @@ footer {
   }
 
   .nav-butterfly {
-    top: -0.2rem;
-    left: calc(100% - 0.35rem);
+    top: 0.35rem;
+    right: 0.85rem;
     width: 30px;
   }
 
