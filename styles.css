@@ -1465,7 +1465,7 @@ textarea::placeholder {
   margin-bottom: 1.25rem;
   color: var(--dark-olive);
   font-family: var(--font-display);
-  font-size: clamp(1.1rem, 1.55vw, 1.6rem);
+  font-size: clamp(0.98rem, 1.35vw, 1.35rem);
   line-height: 1.4;
 }
 
