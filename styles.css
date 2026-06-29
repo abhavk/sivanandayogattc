@@ -1836,9 +1836,16 @@ textarea::placeholder {
 .faq-video-frame {
   position: relative;
   overflow: hidden;
+  order: 1;
+  margin-top: 0.15rem;
   border-radius: 20px;
   background: rgba(31, 20, 2, 0.08);
   box-shadow: 0 18px 40px rgba(31, 20, 2, 0.12);
+}
+
+.faq-video-title,
+.faq-video-text {
+  order: 2;
 }
 
 .faq-video-frame::before {
