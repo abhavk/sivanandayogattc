@@ -1477,6 +1477,82 @@ textarea::placeholder {
   text-transform: uppercase;
 }
 
+.testimonial-social-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  max-width: 980px;
+  margin: 2.5rem auto 0;
+  padding: clamp(1.2rem, 2.5vw, 1.85rem);
+  border: 1px solid rgba(149, 126, 108, 0.28);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top left, rgba(216, 189, 98, 0.16), transparent 34%),
+    linear-gradient(145deg, rgba(250, 248, 242, 0.96), rgba(235, 229, 217, 0.9));
+  box-shadow: 0 20px 50px rgba(31, 20, 2, 0.08);
+}
+
+.testimonial-social-copy {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.testimonial-social-kicker {
+  color: var(--khaki);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.testimonial-social-title {
+  color: var(--dark-olive);
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.1vw, 2rem);
+  line-height: 1.12;
+}
+
+.testimonial-social-text {
+  max-width: 30rem;
+  margin: 0;
+  color: var(--light-brown);
+}
+
+.testimonial-social-embed {
+  display: grid;
+  justify-items: center;
+  gap: 0.85rem;
+}
+
+.testimonial-social-embed .instagram-media {
+  width: 100% !important;
+  max-width: 32rem !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  border-radius: 22px !important;
+  box-shadow: 0 18px 40px rgba(31, 20, 2, 0.12) !important;
+  overflow: hidden !important;
+}
+
+.testimonial-social-link {
+  margin: 0;
+}
+
+.testimonial-social-link a {
+  color: var(--dark-olive);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.testimonial-social-link a:hover {
+  color: var(--khaki);
+}
+
+
 .faq {
   position: relative;
   overflow: hidden;
@@ -2176,6 +2252,18 @@ footer {
   .testimonial-dots {
     margin-top: 5.5rem;
   }
+
+  .testimonial-social-card {
+    grid-template-columns: 1fr;
+    margin-top: 2rem;
+    border-radius: 18px;
+    padding: 1.15rem;
+  }
+
+  .testimonial-social-embed .instagram-media {
+    max-width: 100% !important;
+  }
+
 
   .faq-layout {
     max-width: none;
