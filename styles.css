@@ -1945,6 +1945,19 @@ textarea::placeholder {
   max-width: none;
 }
 
+.faq-video-card-live-featured {
+  border-color: rgba(135, 109, 45, 0.42);
+  background:
+    radial-gradient(circle at top left, rgba(216, 189, 98, 0.28), transparent 38%),
+    linear-gradient(180deg, rgba(255, 252, 244, 0.94), rgba(240, 233, 218, 0.96));
+  box-shadow: 0 20px 44px rgba(31, 20, 2, 0.12);
+}
+
+.faq-video-card-live-featured .faq-video-kicker {
+  color: var(--dark-olive);
+}
+
+
 
 .faq-video-copy {
   display: grid;
