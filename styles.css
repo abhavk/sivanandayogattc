@@ -1577,6 +1577,45 @@ textarea::placeholder {
   z-index: 1;
 }
 
+.faq-live-hub {
+  max-width: 1120px;
+  margin: 0 auto var(--card-gap);
+  padding: clamp(1.35rem, 2.8vw, 2rem);
+  border: 1px solid rgba(135, 109, 45, 0.22);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top left, rgba(216, 189, 98, 0.2), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(149, 126, 108, 0.12), transparent 30%),
+    linear-gradient(145deg, rgba(250, 248, 242, 0.98), rgba(239, 233, 221, 0.95));
+  box-shadow: 0 28px 70px rgba(31, 20, 2, 0.1);
+}
+
+.faq-live-intro {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 40rem;
+  margin-bottom: 1.75rem;
+}
+
+.faq-live-title {
+  color: var(--dark-olive);
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3vw, 2.75rem);
+  line-height: 1.05;
+}
+
+.faq-live-text {
+  margin: 0;
+  color: var(--light-brown);
+}
+
+.faq-live-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.4rem);
+}
+
+
 .faq-header {
   border-bottom-color: rgba(63, 49, 20, 0.18);
 }
@@ -1883,6 +1922,29 @@ textarea::placeholder {
     linear-gradient(145deg, rgba(250, 248, 242, 0.96), rgba(235, 229, 217, 0.92));
   box-shadow: 0 20px 50px rgba(31, 20, 2, 0.08);
 }
+
+.faq-video-card-stacked {
+  grid-template-columns: 1fr;
+  align-items: start;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+  padding: clamp(1rem, 2vw, 1.3rem);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(244, 239, 229, 0.92));
+  box-shadow: 0 14px 30px rgba(31, 20, 2, 0.08);
+}
+
+.faq-video-card-stacked .faq-video-copy {
+  height: 100%;
+  align-content: start;
+}
+
+.faq-video-card-stacked .faq-video-text {
+  max-width: none;
+}
+
 
 .faq-video-copy {
   display: grid;
@@ -2263,6 +2325,16 @@ footer {
   .testimonial-social-embed .instagram-media {
     max-width: 100% !important;
   }
+
+  .faq-live-hub {
+    border-radius: 22px;
+    padding: 1.15rem;
+  }
+
+  .faq-live-grid {
+    grid-template-columns: 1fr;
+  }
+
 
 
   .faq-layout {
