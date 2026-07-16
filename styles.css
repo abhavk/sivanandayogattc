@@ -1907,6 +1907,38 @@ textarea::placeholder {
   letter-spacing: 0.04em;
 }
 
+.faq-contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.contact-consult-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.15rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: 999px;
+  color: var(--canvas);
+  background: linear-gradient(135deg, var(--khaki), var(--dark-olive));
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 0 12px 24px rgba(63, 49, 20, 0.16);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.contact-consult-btn:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 16px 30px rgba(63, 49, 20, 0.2);
+}
+
 .faq-video-card {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.2fr);
