@@ -220,6 +220,20 @@ nav.is-visible {
   animation-delay: -0.035s;
 }
 
+.nav-butterfly.is-resting .butterfly-wing {
+  animation-duration: 1.8s;
+  animation-timing-function: ease-in-out;
+}
+
+.nav-butterfly.is-resting .butterfly-wing-left {
+  animation-name: butterfly-left-idle;
+}
+
+.nav-butterfly.is-resting .butterfly-wing-right {
+  animation-name: butterfly-right-idle;
+  animation-delay: 0s;
+}
+
 .nav-butterfly.is-settling .butterfly-wing {
   animation-duration: 4.2s;
   animation-fill-mode: forwards;
@@ -311,6 +325,28 @@ nav.is-visible {
 
   88% {
     transform: scaleX(1);
+  }
+}
+
+@keyframes butterfly-left-idle {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+
+  50% {
+    transform: scaleX(0.72) rotate(-1deg);
+  }
+}
+
+@keyframes butterfly-right-idle {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+
+  50% {
+    transform: scaleX(0.72) rotate(1deg);
   }
 }
 
@@ -1354,9 +1390,16 @@ nav.is-visible {
   background-color: var(--dark-olive);
 }
 
-.price-card.featured .label,
+.price-card.featured .label {
+  color: var(--warm-gold);
+}
+
 .price-card.featured .price-amount {
-  color: var(--khaki);
+  color: var(--canvas);
+}
+
+.price-card.featured .gst-note {
+  color: rgba(244, 247, 248, 0.72);
 }
 
 .price-card.featured p {
