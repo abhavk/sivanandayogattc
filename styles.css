@@ -1021,6 +1021,10 @@ nav.is-visible {
   border-bottom-color: color-mix(in srgb, var(--dark-olive) 18%, transparent);
 }
 
+.schedule-header .section-note {
+  color: var(--light-brown);
+}
+
 .schedule-container {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1775,11 +1779,14 @@ textarea::placeholder {
 }
 
 .testimonial-track {
+  position: relative;
   display: grid;
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--beaver) 32%, transparent);
-  background-color: var(--white);
   touch-action: pan-y;
+}
+
+.testimonial-track.is-shorts {
+  overflow: visible;
 }
 
 .testimonial-track:focus-visible {
@@ -1808,6 +1815,19 @@ textarea::placeholder {
   pointer-events: auto;
   transform: translateY(0);
   transition-delay: 0.08s, 0.08s, 0s;
+}
+
+.testimonial-card:not(.testimonial-card-shorts) {
+  border: 1px solid color-mix(in srgb, var(--beaver) 32%, transparent);
+  background-color: var(--white);
+}
+
+.testimonial-track.is-shorts .testimonial-card:not(.testimonial-card-shorts),
+.testimonial-track:not(.is-shorts) .testimonial-card-shorts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .testimonial-controls {
@@ -1910,7 +1930,10 @@ textarea::placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.35rem 1rem 1.5rem;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
 .shorts-stack {
@@ -1924,7 +1947,6 @@ textarea::placeholder {
   position: relative;
   width: 100%;
   aspect-ratio: 9 / 16;
-  border: 1px solid color-mix(in srgb, var(--beaver) 42%, transparent);
   border-radius: 28px;
   overflow: hidden;
   background-color: #1c140c;

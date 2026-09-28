@@ -744,7 +744,7 @@
         </div>
 
         <div class="testimonial-carousel" data-carousel>
-          <div class="testimonial-track" role="region" aria-label="Student testimonials" aria-live="polite" tabindex="0" data-carousel-track>
+          <div class="testimonial-track is-shorts" role="region" aria-label="Student testimonials" aria-live="polite" tabindex="0" data-carousel-track>
             <article class="testimonial-card testimonial-card-shorts is-active" data-shorts-card>
               <div class="shorts-stack" data-shorts>
                 <div class="shorts-phone">
@@ -2439,7 +2439,9 @@
             }
           });
 
-          if (!cards[currentIndex].hasAttribute("data-shorts-card")) pauseShorts();
+          const showingShorts = cards[currentIndex].hasAttribute("data-shorts-card");
+          track.classList.toggle("is-shorts", showingShorts);
+          if (!showingShorts) pauseShorts();
         };
 
         const goToSlide = (index) => {
