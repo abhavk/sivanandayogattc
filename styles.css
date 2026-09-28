@@ -2048,20 +2048,6 @@ textarea::placeholder {
   border-color: transparent transparent transparent var(--dark-olive);
 }
 
-.shorts-count {
-  position: absolute;
-  top: 0.85rem;
-  left: 0.85rem;
-  z-index: 3;
-  margin: 0;
-  color: var(--white);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
-}
-
 .shorts-pips {
   position: absolute;
   top: 50%;
