@@ -1265,6 +1265,10 @@ nav.is-visible {
   object-position: right center;
 }
 
+.teacher-img img.teacher-img-sharada {
+  object-position: center 52%;
+}
+
 .teacher-card.is-open .teacher-img img,
 .teacher-card:focus-visible .teacher-img img {
   filter: grayscale(0%) contrast(1.05);
