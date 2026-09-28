@@ -484,10 +484,34 @@
           <article class="teacher-card" tabindex="0">
             <div class="teacher-img">
               <img src="assets/yashika.jpeg" alt="Yashika Singh">
+              <div class="teacher-tags" aria-label="Yashika Singh qualifications">
+                <span class="teacher-tag">RYT 200</span>
+              </div>
             </div>
             <div class="teacher-info">
               <h4>Yashika Singh</h4>
-              <p class="teacher-role">Yoga Teacher</p>
+              <p class="teacher-role">TTC Assistant &amp; Mentor</p>
+              <span class="teacher-expand" aria-hidden="true"></span>
+              <div class="teacher-bio">
+                <div class="teacher-bio-inner">
+                  <p>
+                    Yashika is young in experience, and way beyond her years in wisdom, hard work and
+                    comprehension of teaching and practice of yoga. In her short career as a yoga teacher, she
+                    has gone from teaching small parts of a Sivananda Open class, to assisting two
+                    internationally recognised Yoga Teacher Training courses.
+                  </p>
+                  <p>
+                    In between she has learnt and mastered the administration of Sivananda Gurgaon&rsquo;s daily
+                    online yoga programme, been upgraded for her sheer ability to being senior staff of
+                    Sivananda Gurgaon, interacting with freshers and seasoned practitioners, and ably assisting
+                    and teaching in many of the specialized courses which the Centre organises from time to
+                    time. Yashika brings steadiness, maturity and a great sense of purpose and promptness in
+                    dealing with students. Her presence in the teachers&rsquo; training course means that
+                    students have someone to turn to, someone whom they can depend on, for support, help and
+                    guidance, at all times.
+                  </p>
+                </div>
+              </div>
             </div>
           </article>
 
@@ -1978,7 +2002,12 @@
         releaseButterfly();
       }
 
+      let butterflyLayoutWidth = window.innerWidth;
+
       window.addEventListener("resize", () => {
+        const width = window.innerWidth;
+        if (Math.abs(width - butterflyLayoutWidth) < 2) return;
+        butterflyLayoutWidth = width;
         window.clearTimeout(butterflyResizeTimer);
         butterflyResizeTimer = window.setTimeout(() => {
           if (butterflyIntroComplete) startButterflyJourney();
