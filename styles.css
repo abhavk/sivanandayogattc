@@ -1,13 +1,20 @@
 :root {
-  --dark-olive: #2b465d;
-  --black-amber: #142635;
-  --light-brown: #62778a;
-  --khaki: #3f617d;
-  --beaver: #8b9ca9;
-  --canvas: #f4f7f8;
-  --canvas-alt: #e7eef2;
-  --dark-section-heading: rgba(244, 247, 248, 0.9);
-  --warm-gold: #9fbbd4;
+  --dark-olive: #4a300c;
+  --black-amber: #3a2610;
+  --light-brown: #5e4012;
+  --khaki: #6a4814;
+  --beaver: #d7bc8a;
+  --canvas: #e0bc6a;
+  --canvas-alt: #cfa85a;
+  --dark-section-heading: rgba(255, 236, 186, 0.96);
+  --warm-gold: #f3c53a;
+  --white: #ffffff;
+  --paypal: #0070ba;
+  --paypal-hover: #003087;
+  --whatsapp: #25d366;
+  --whatsapp-hover: #1fb856;
+  --whatsapp-ink: #073d20;
+  --whatsapp-ink-hover: #052f19;
   --font-display: "Marcellus", serif;
   --font-body: "DM Sans", sans-serif;
   --space-xs: 0.5rem;
@@ -34,7 +41,7 @@ html {
 body {
   overflow-x: hidden;
   color: var(--black-amber);
-  background-color: var(--canvas);
+  background-color: var(--white);
   font-family: var(--font-body);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -105,21 +112,22 @@ section {
 }
 
 .btn-primary {
-  color: var(--canvas);
-  background-color: var(--khaki);
+  color: var(--black-amber);
+  background-color: var(--warm-gold);
 }
 
 .btn-primary:hover {
+  color: var(--white);
   background-color: var(--dark-olive);
 }
 
 .paypal-btn {
   color: var(--canvas);
-  background-color: #0070ba;
+  background-color: var(--paypal);
 }
 
 .paypal-btn:hover {
-  background-color: #003087;
+  background-color: var(--paypal-hover);
 }
 
 .btn-outline {
@@ -144,8 +152,8 @@ nav {
   justify-content: space-between;
   gap: 1.5rem;
   padding: 1rem clamp(1rem, 2vw, 2rem);
-  border-bottom: 1px solid rgba(244, 247, 248, 0.12);
-  background-color: rgba(20, 38, 53, 0.82);
+  border-bottom: 1px solid color-mix(in srgb, var(--canvas) 12%, transparent);
+  background-color: color-mix(in srgb, var(--black-amber) 82%, transparent);
   backdrop-filter: blur(16px);
   opacity: 1;
   pointer-events: auto;
@@ -184,7 +192,7 @@ nav.is-visible {
   cursor: pointer;
   pointer-events: auto;
   touch-action: manipulation;
-  filter: drop-shadow(0 3px 8px rgba(20, 38, 53, 0.18));
+  filter: drop-shadow(0 3px 8px color-mix(in srgb, var(--black-amber) 18%, transparent));
   transform-origin: center;
   will-change: transform;
 }
@@ -196,9 +204,16 @@ nav.is-visible {
   overflow: visible;
 }
 
+.butterfly-for-button {
+  filter:
+    drop-shadow(0 0 0.55px var(--black-amber))
+    drop-shadow(0 0 0.55px var(--black-amber))
+    drop-shadow(0 3px 8px color-mix(in srgb, var(--black-amber) 18%, transparent));
+}
+
 .butterfly-wing {
-  fill: rgba(244, 247, 248, 0.18);
-  stroke: rgba(244, 247, 248, 0.96);
+  fill: color-mix(in srgb, var(--canvas) 18%, transparent);
+  stroke: color-mix(in srgb, var(--canvas) 96%, transparent);
   stroke-width: 1.6;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -267,17 +282,17 @@ nav.is-visible {
 
 .butterfly-wing .wing-detail {
   fill: none;
-  stroke: rgba(244, 247, 248, 0.48);
+  stroke: color-mix(in srgb, var(--canvas) 48%, transparent);
   stroke-width: 1;
 }
 
 .butterfly-body {
-  fill: rgba(244, 247, 248, 0.98);
+  fill: color-mix(in srgb, var(--canvas) 98%, transparent);
 }
 
 .butterfly-antennae {
   fill: none;
-  stroke: rgba(244, 247, 248, 0.92);
+  stroke: color-mix(in srgb, var(--canvas) 92%, transparent);
   stroke-width: 1.4;
   stroke-linecap: round;
 }
@@ -439,6 +454,11 @@ nav.is-visible {
     animation: none;
     transform: scaleX(1);
   }
+
+  .logo-name,
+  .logo-location {
+    animation: none;
+  }
 }
 
 .logo-name,
@@ -477,9 +497,51 @@ nav.is-visible {
   color: var(--warm-gold);
 }
 
+.logo-name,
+.logo-location {
+  background-image: linear-gradient(
+    105deg,
+    var(--warm-gold) 0%,
+    var(--warm-gold) 38%,
+    color-mix(in srgb, var(--white) 35%, var(--warm-gold)) 44%,
+    color-mix(in srgb, var(--white) 72%, var(--warm-gold)) 48%,
+    var(--white) 50%,
+    color-mix(in srgb, var(--white) 72%, var(--warm-gold)) 52%,
+    color-mix(in srgb, var(--white) 35%, var(--warm-gold)) 56%,
+    var(--warm-gold) 62%,
+    var(--warm-gold) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 400% 100%;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: nav-gold-shine 10s ease-in-out infinite;
+}
+
 .nav-links .nav-cta {
   padding: 0.75rem clamp(1rem, 1.5vw, 1.5rem);
-  color: var(--canvas);
+  color: var(--black-amber);
+  -webkit-text-fill-color: var(--black-amber);
+}
+
+.nav-links .nav-cta:hover {
+  color: var(--white);
+  -webkit-text-fill-color: var(--white);
+}
+
+@keyframes nav-gold-shine {
+  0%,
+  30% {
+    background-position: 100% 50%;
+  }
+
+  78%,
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .hero {
@@ -529,7 +591,7 @@ nav.is-visible {
   width: 100%;
   height: auto;
   opacity: 0.92;
-  filter: brightness(0) invert(1) drop-shadow(0 2px 10px rgba(20, 38, 53, 0.35));
+  filter: brightness(0) invert(1) drop-shadow(0 2px 10px color-mix(in srgb, var(--black-amber) 35%, transparent));
 }
 
 .hero-content {
@@ -546,7 +608,7 @@ nav.is-visible {
   margin-bottom: 1rem;
   color: var(--warm-gold);
   font-weight: 700;
-  text-shadow: 0 1px 6px rgba(20, 38, 53, 0.75);
+  text-shadow: 0 1px 6px color-mix(in srgb, var(--black-amber) 75%, transparent);
 }
 
 .hero-eyebrow {
@@ -560,9 +622,10 @@ nav.is-visible {
 
 .hero-title {
   margin-bottom: 2rem;
-  color: var(--dark-section-heading);
+  color: var(--white);
   font-size: clamp(3rem, 6vw, 6rem);
   line-height: 1;
+  text-shadow: 0 1px 8px color-mix(in srgb, var(--black-amber) 55%, transparent);
 }
 
 .hero-meta {
@@ -571,7 +634,7 @@ nav.is-visible {
   gap: 1.5rem;
   padding-left: 2rem;
   border-left: 1px solid var(--beaver);
-  color: var(--canvas);
+  color: var(--white);
 }
 
 .meta-item {
@@ -582,7 +645,7 @@ nav.is-visible {
 .meta-item .label {
   margin-bottom: 0.25rem;
   color: var(--warm-gold);
-  text-shadow: 0 1px 6px rgba(20, 38, 53, 0.75);
+  text-shadow: 0 1px 6px color-mix(in srgb, var(--black-amber) 75%, transparent);
 }
 
 .meta-item .value {
@@ -602,7 +665,7 @@ nav.is-visible {
 
 .overview {
   padding: var(--space-lg) 0;
-  background-color: var(--canvas);
+  background-color: var(--white);
 }
 
 .overview-grid {
@@ -657,9 +720,9 @@ nav.is-visible {
   display: flex;
   gap: 0.3rem;
   padding: 0.35rem;
-  border: 1px solid rgba(244, 247, 248, 0.42);
+  border: 1px solid color-mix(in srgb, var(--canvas) 42%, transparent);
   border-radius: 999px;
-  background: rgba(20, 38, 53, 0.72);
+  background: color-mix(in srgb, var(--black-amber) 72%, transparent);
   backdrop-filter: blur(8px);
   transform: translateX(-50%);
 }
@@ -668,7 +731,7 @@ nav.is-visible {
   padding: 0.5rem 0.85rem;
   border: 0;
   border-radius: 999px;
-  color: var(--canvas);
+  color: var(--white);
   background: transparent;
   font: inherit;
   font-size: 0.8rem;
@@ -679,7 +742,7 @@ nav.is-visible {
 .overview-image-switcher button:hover,
 .overview-image-switcher button:focus-visible {
   color: var(--black-amber);
-  background: rgba(244, 247, 248, 0.78);
+  background: color-mix(in srgb, var(--canvas) 78%, transparent);
   outline: none;
 }
 
@@ -689,7 +752,7 @@ nav.is-visible {
 }
 
 .curriculum {
-  color: var(--canvas);
+  color: var(--white);
   background-color: var(--dark-olive);
 }
 
@@ -700,7 +763,7 @@ nav.is-visible {
   gap: 2rem;
   margin-bottom: var(--section-header-gap);
   padding-bottom: 1.35rem;
-  border-bottom: 1px solid rgba(244, 247, 248, 0.2);
+  border-bottom: 1px solid color-mix(in srgb, var(--canvas) 20%, transparent);
 }
 
 .curriculum .section-header {
@@ -717,7 +780,7 @@ nav.is-visible {
 .benefits .section-title,
 .form-info h2,
 .payment-section h3 {
-  color: var(--dark-section-heading);
+  color: var(--white);
 }
 
 .section-title {
@@ -792,7 +855,7 @@ nav.is-visible {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(35, 57, 76, 0.08) 0%, rgba(35, 57, 76, 0.88) 100%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--black-amber) 8%, transparent) 0%, color-mix(in srgb, var(--black-amber) 88%, transparent) 100%);
   opacity: 1;
   transition: opacity 0.4s ease;
 }
@@ -836,7 +899,7 @@ nav.is-visible {
 
 .bento-title {
   margin-bottom: 0;
-  color: var(--dark-section-heading);
+  color: var(--white);
   font-size: 1.75rem;
   transform: translateY(0);
   transition: transform 0.4s ease;
@@ -854,7 +917,7 @@ nav.is-visible {
   padding-left: 1.1rem;
   overflow-y: auto;
   scrollbar-width: none;
-  color: rgba(244, 247, 248, 0.92);
+  color: var(--white);
   font-size: 0.92rem;
   line-height: 1.45;
   opacity: 1;
@@ -946,9 +1009,7 @@ nav.is-visible {
   position: relative;
   overflow: hidden;
   padding: 3.25rem 0 5rem;
-  background:
-    radial-gradient(circle at 12% 12%, rgba(63, 97, 125, 0.14), transparent 34%),
-    linear-gradient(135deg, var(--canvas) 0%, var(--canvas-alt) 100%);
+  background-color: var(--white);
 }
 
 .schedule .container {
@@ -957,7 +1018,7 @@ nav.is-visible {
 }
 
 .schedule-header {
-  border-bottom-color: rgba(43, 70, 93, 0.18);
+  border-bottom-color: color-mix(in srgb, var(--dark-olive) 18%, transparent);
 }
 
 .schedule-container {
@@ -972,13 +1033,11 @@ nav.is-visible {
   min-height: 360px;
   padding: 2rem;
   overflow: hidden;
-  border: 1px solid rgba(43, 70, 93, 0.12);
+  border: 1px solid color-mix(in srgb, var(--dark-olive) 12%, transparent);
   border-radius: 22px;
-  background:
-    linear-gradient(180deg, rgba(244, 247, 248, 0.96), rgba(231, 238, 242, 0.9)),
-    var(--canvas);
+  background-color: var(--white);
   color: var(--black-amber);
-  box-shadow: 0 28px 70px rgba(20, 38, 53, 0.11);
+  box-shadow: 0 28px 70px color-mix(in srgb, var(--black-amber) 11%, transparent);
 }
 
 .schedule-card::before {
@@ -1003,7 +1062,7 @@ nav.is-visible {
   gap: 0.85rem;
   margin-bottom: 0;
   padding: 0.62rem 0;
-  border-bottom: 1px solid rgba(98, 119, 138, 0.18);
+  border-bottom: 1px solid color-mix(in srgb, var(--light-brown) 18%, transparent);
   color: var(--black-amber);
   font-size: 0.9rem;
   line-height: 1.4;
@@ -1024,7 +1083,7 @@ nav.is-visible {
   margin-bottom: 0;
   padding: 0.7rem 1rem;
   border-radius: 999px;
-  background-color: rgba(63, 97, 125, 0.12);
+  background-color: color-mix(in srgb, var(--khaki) 12%, transparent);
   color: var(--dark-olive);
   font-size: 0.82rem;
   font-weight: 700;
@@ -1032,7 +1091,7 @@ nav.is-visible {
 }
 
 .benefits {
-  color: var(--canvas);
+  color: var(--white);
   background-color: var(--black-amber);
 }
 
@@ -1051,10 +1110,10 @@ nav.is-visible {
   align-content: start;
   gap: 0.65rem;
   padding: clamp(1.1rem, 1.8vw, 1.5rem);
-  border: 1px solid rgba(244, 247, 248, 0.12);
+  border: 1px solid color-mix(in srgb, var(--canvas) 12%, transparent);
   background:
-    linear-gradient(135deg, rgba(63, 97, 125, 0.18), transparent 58%),
-    rgba(244, 247, 248, 0.04);
+    linear-gradient(135deg, color-mix(in srgb, var(--khaki) 18%, transparent), transparent 58%),
+    color-mix(in srgb, var(--canvas) 4%, transparent);
 }
 
 .benefit-kicker {
@@ -1069,13 +1128,13 @@ nav.is-visible {
   display: grid;
   gap: 0.35rem;
   max-width: 13ch;
-  color: var(--dark-section-heading);
+  color: var(--white);
   font-size: clamp(1.85rem, 3.2vw, 2.75rem);
   line-height: 0.98;
 }
 
 .benefit-card h3 span {
-  color: var(--dark-section-heading);
+  color: var(--white);
   font-family: var(--font-display);
   font-weight: 400;
 }
@@ -1100,7 +1159,7 @@ nav.is-visible {
 
 .benefit-card p {
   max-width: 34rem;
-  color: var(--beaver);
+  color: var(--white);
   font-size: 1rem;
 }
 
@@ -1115,7 +1174,7 @@ nav.is-visible {
 .benefit-card li {
   position: relative;
   padding-left: 1.15rem;
-  color: var(--canvas-alt);
+  color: var(--white);
   font-size: 1rem;
 }
 
@@ -1131,7 +1190,7 @@ nav.is-visible {
 }
 
 .teachers {
-  background-color: var(--canvas);
+  background-color: var(--white);
 }
 
 .teacher-header {
@@ -1152,11 +1211,11 @@ nav.is-visible {
   flex: 0 1 calc(33.333333% - 0.666667rem);
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid rgba(139, 156, 169, 0.35);
+  border: 1px solid color-mix(in srgb, var(--beaver) 35%, transparent);
   border-radius: 6px;
   outline: none;
-  background-color: #f8fafb;
-  box-shadow: 0 1px 2px rgba(20, 38, 53, 0.05);
+  background-color: var(--white);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--black-amber) 5%, transparent);
   text-align: center;
   cursor: pointer;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
@@ -1164,19 +1223,19 @@ nav.is-visible {
 
 .teacher-card.is-open,
 .teacher-card:focus-visible {
-  border-color: rgba(63, 97, 125, 0.55);
-  box-shadow: 0 24px 48px rgba(20, 38, 53, 0.14);
+  border-color: color-mix(in srgb, var(--khaki) 55%, transparent);
+  box-shadow: 0 24px 48px color-mix(in srgb, var(--black-amber) 14%, transparent);
   transform: translateY(-6px);
 }
 
 .teacher-card:focus-visible {
-  box-shadow: 0 0 0 3px var(--khaki), 0 24px 48px rgba(20, 38, 53, 0.14);
+  box-shadow: 0 0 0 3px var(--khaki), 0 24px 48px color-mix(in srgb, var(--black-amber) 14%, transparent);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .teacher-card:hover {
-    border-color: rgba(63, 97, 125, 0.55);
-    box-shadow: 0 24px 48px rgba(20, 38, 53, 0.14);
+    border-color: color-mix(in srgb, var(--khaki) 55%, transparent);
+    box-shadow: 0 24px 48px color-mix(in srgb, var(--black-amber) 14%, transparent);
     transform: translateY(-6px);
   }
 }
@@ -1275,7 +1334,7 @@ nav.is-visible {
 
 .teacher-bio-inner p {
   padding-top: 0.9rem;
-  color: var(--beaver);
+  color: var(--light-brown);
   font-size: 0.9rem;
   line-height: 1.65;
   text-align: left;
@@ -1285,7 +1344,7 @@ nav.is-visible {
 
 .teacher-bio-inner p:first-child {
   margin-top: 0.35rem;
-  border-top: 1px solid rgba(139, 156, 169, 0.25);
+  border-top: 1px solid color-mix(in srgb, var(--beaver) 25%, transparent);
 }
 
 .teacher-card.is-open .teacher-bio,
@@ -1328,10 +1387,10 @@ nav.is-visible {
   align-items: center;
   min-height: 32px;
   padding: 0.4rem 0.75rem;
-  border: 1px solid rgba(244, 247, 248, 0.55);
+  border: 1px solid color-mix(in srgb, var(--canvas) 55%, transparent);
   color: var(--dark-olive);
-  background-color: rgba(244, 247, 248, 0.9);
-  box-shadow: 0 10px 24px rgba(20, 38, 53, 0.16);
+  background-color: color-mix(in srgb, var(--canvas) 90%, transparent);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--black-amber) 16%, transparent);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -1340,11 +1399,12 @@ nav.is-visible {
 }
 
 .pricing {
-  background-color: var(--canvas-alt);
+  background-color: color-mix(in srgb, var(--canvas) 24%, var(--white));
+  border-top: 1px solid color-mix(in srgb, var(--dark-olive) 16%, transparent);
 }
 
 .pricing-header {
-  border-bottom-color: rgba(43, 70, 93, 0.18);
+  border-bottom-color: color-mix(in srgb, var(--dark-olive) 18%, transparent);
 }
 
 .pricing-header .section-note {
@@ -1381,11 +1441,11 @@ nav.is-visible {
   flex-direction: column;
   padding: 4rem 3rem;
   border: 1px solid var(--beaver);
-  background-color: var(--canvas);
+  background-color: var(--white);
 }
 
 .price-card.featured {
-  color: var(--canvas);
+  color: var(--white);
   border-color: var(--dark-olive);
   background-color: var(--dark-olive);
 }
@@ -1395,15 +1455,15 @@ nav.is-visible {
 }
 
 .price-card.featured .price-amount {
-  color: var(--canvas);
+  color: var(--white);
 }
 
 .price-card.featured .gst-note {
-  color: rgba(244, 247, 248, 0.72);
+  color: color-mix(in srgb, var(--white) 78%, transparent);
 }
 
 .price-card.featured p {
-  color: var(--beaver);
+  color: var(--white);
 }
 
 .price-tier {
@@ -1414,7 +1474,7 @@ nav.is-visible {
 }
 
 .price-card.featured .price-tier {
-  color: var(--canvas);
+  color: var(--white);
 }
 
 .price-amount {
@@ -1441,14 +1501,14 @@ nav.is-visible {
 
 .price-card li {
   padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(139, 156, 169, 0.2);
+  border-bottom: 1px solid color-mix(in srgb, var(--beaver) 20%, transparent);
   color: var(--light-brown);
   font-size: 0.9rem;
 }
 
 .price-card.featured li {
-  border-bottom-color: rgba(244, 247, 248, 0.1);
-  color: rgba(244, 247, 248, 0.8);
+  border-bottom-color: color-mix(in srgb, var(--white) 16%, transparent);
+  color: var(--white);
 }
 
 .global-label {
@@ -1463,9 +1523,9 @@ nav.is-visible {
 
 .application {
   padding: 5rem 0;
-  color: var(--canvas);
+  color: var(--white);
   background:
-    radial-gradient(circle at 82% 18%, rgba(63, 97, 125, 0.22), transparent 34%),
+    radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--khaki) 22%, transparent), transparent 34%),
     var(--black-amber);
 }
 
@@ -1489,7 +1549,7 @@ nav.is-visible {
 
 .form-info p {
   margin-bottom: 1.25rem;
-  color: var(--beaver);
+  color: var(--white);
   font-size: 1.1rem;
   line-height: 1.75;
 }
@@ -1503,7 +1563,7 @@ nav.is-visible {
 
 .application-back-btn {
   border-color: var(--beaver);
-  color: var(--canvas);
+  color: var(--white);
 }
 
 .application-back-btn:hover {
@@ -1531,7 +1591,7 @@ nav.is-visible {
 }
 
 .contact-item a {
-  color: var(--dark-section-heading);
+  color: var(--white);
   font-family: var(--font-display);
   font-size: clamp(1rem, 1.4vw, 1.2rem);
   text-decoration: none;
@@ -1550,8 +1610,8 @@ nav.is-visible {
   margin-top: 0.15rem;
   padding: 0.85rem 1.25rem;
   border-radius: 999px;
-  color: #073d20;
-  background-color: #25d366;
+  color: var(--whatsapp-ink);
+  background-color: var(--whatsapp);
   font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 700;
@@ -1562,25 +1622,25 @@ nav.is-visible {
 
 .contact-item .contact-call-btn:hover,
 .faq-contact .contact-call-btn:hover {
-  color: #052f19;
-  background-color: #1fb856;
+  color: var(--whatsapp-ink-hover);
+  background-color: var(--whatsapp-hover);
 }
 
 .application-form {
   grid-column: 2;
   padding: clamp(2rem, 4vw, 3.25rem);
-  border: 1px solid rgba(159, 187, 212, 0.28);
+  border: 1px solid color-mix(in srgb, var(--warm-gold) 28%, transparent);
   border-radius: 28px;
   background:
-    linear-gradient(145deg, rgba(63, 97, 125, 0.56), rgba(43, 70, 93, 0.96)),
+    linear-gradient(145deg, color-mix(in srgb, var(--khaki) 56%, transparent), color-mix(in srgb, var(--dark-olive) 96%, transparent)),
     var(--dark-olive);
-  box-shadow: 0 30px 80px rgba(8, 20, 29, 0.28);
+  box-shadow: 0 30px 80px color-mix(in srgb, var(--black-amber) 28%, transparent);
 }
 
 .payment-section + .payment-section {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(244, 247, 248, 0.16);
+  border-top: 1px solid color-mix(in srgb, var(--canvas) 16%, transparent);
 }
 
 .payment-options {
@@ -1590,7 +1650,7 @@ nav.is-visible {
   gap: clamp(1.5rem, 4vw, 3rem);
   margin-top: 2rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(244, 247, 248, 0.16);
+  border-top: 1px solid color-mix(in srgb, var(--canvas) 16%, transparent);
 }
 
 .payment-options .payment-section + .payment-section {
@@ -1621,7 +1681,7 @@ nav.is-visible {
   grid-template-columns: 120px 1fr;
   gap: 1rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(244, 247, 248, 0.12);
+  border-bottom: 1px solid color-mix(in srgb, var(--canvas) 12%, transparent);
 }
 
 .bank-details div:last-child {
@@ -1630,7 +1690,7 @@ nav.is-visible {
 }
 
 .bank-details dt {
-  color: var(--beaver);
+  color: var(--warm-gold);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -1638,7 +1698,7 @@ nav.is-visible {
 }
 
 .bank-details dd {
-  color: var(--canvas);
+  color: var(--white);
   font-family: var(--font-display);
   font-size: 1.35rem;
 }
@@ -1649,7 +1709,7 @@ nav.is-visible {
   margin-top: 0.9rem;
   border-radius: 1rem;
   background-color: var(--canvas);
-  box-shadow: 0 16px 36px rgba(8, 20, 29, 0.2);
+  box-shadow: 0 16px 36px color-mix(in srgb, var(--black-amber) 20%, transparent);
 }
 
 .form-group {
@@ -1669,7 +1729,7 @@ textarea {
   padding: 1rem 0;
   border: none;
   border-bottom: 1px solid var(--beaver);
-  color: var(--canvas);
+  color: var(--white);
   background: transparent;
   font-family: var(--font-body);
   font-size: 1rem;
@@ -1689,7 +1749,7 @@ textarea {
 
 input::placeholder,
 textarea::placeholder {
-  color: var(--light-brown);
+  color: color-mix(in srgb, var(--white) 62%, transparent);
 }
 
 .final-field {
@@ -1701,7 +1761,7 @@ textarea::placeholder {
 }
 
 .testimonials {
-  background-color: var(--canvas);
+  background-color: var(--white);
 }
 
 .testimonials-header {
@@ -1717,10 +1777,8 @@ textarea::placeholder {
 .testimonial-track {
   display: grid;
   overflow: hidden;
-  border: 1px solid rgba(139, 156, 169, 0.32);
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.28), transparent 45%),
-    var(--canvas-alt);
+  border: 1px solid color-mix(in srgb, var(--beaver) 32%, transparent);
+  background-color: var(--white);
   touch-action: pan-y;
 }
 
@@ -1765,7 +1823,7 @@ textarea::placeholder {
   height: 42px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(43, 70, 93, 0.2);
+  border: 1px solid color-mix(in srgb, var(--dark-olive) 20%, transparent);
   border-radius: 50%;
   color: var(--dark-olive);
   background-color: transparent;
@@ -1776,9 +1834,20 @@ textarea::placeholder {
 }
 
 .testimonial-arrow:hover {
-  color: var(--canvas);
+  color: var(--white);
   background-color: var(--dark-olive);
   transform: scale(1.05);
+}
+
+.testimonial-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.testimonial-arrow:disabled:hover {
+  color: var(--dark-olive);
+  background-color: transparent;
+  transform: none;
 }
 
 .testimonial-arrow:focus-visible,
@@ -1799,7 +1868,7 @@ textarea::placeholder {
   height: 3px;
   border: 0;
   border-radius: 999px;
-  background-color: rgba(63, 97, 125, 0.28);
+  background-color: color-mix(in srgb, var(--khaki) 28%, transparent);
   cursor: pointer;
   transition: width 0.3s ease, background-color 0.3s ease;
 }
@@ -1837,6 +1906,200 @@ textarea::placeholder {
   text-transform: uppercase;
 }
 
+.testimonial-card.testimonial-card-shorts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.35rem 1rem 1.5rem;
+}
+
+.shorts-stack {
+  display: grid;
+  justify-items: center;
+  gap: 0.9rem;
+  width: min(315px, 100%);
+}
+
+.shorts-phone {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border: 1px solid color-mix(in srgb, var(--beaver) 42%, transparent);
+  border-radius: 28px;
+  overflow: hidden;
+  background-color: #1c140c;
+  box-shadow: 0 18px 40px color-mix(in srgb, var(--black-amber) 16%, transparent);
+  container-type: size;
+  touch-action: none;
+  user-select: none;
+}
+
+.shorts-phone * {
+  touch-action: none;
+}
+
+.shorts-viewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.shorts-track {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(calc(var(--shorts-index, 0) * -1 * var(--shorts-frame, 100cqh)));
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.shorts-track.is-bump-next {
+  transform: translateY(calc(var(--shorts-index, 0) * -1 * var(--shorts-frame, 100cqh) - 22px));
+}
+
+.shorts-track.is-bump-prev {
+  transform: translateY(calc(var(--shorts-index, 0) * -1 * var(--shorts-frame, 100cqh) + 22px));
+}
+
+.shorts-slide {
+  position: relative;
+  flex: 0 0 var(--shorts-frame, 100cqh);
+  height: var(--shorts-frame, 100cqh);
+}
+
+.shorts-poster,
+.shorts-slide iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.shorts-poster {
+  object-fit: cover;
+}
+
+.shorts-slide iframe {
+  pointer-events: none;
+}
+
+.shorts-slide.is-started .shorts-poster {
+  opacity: 0;
+}
+
+.shorts-play {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: linear-gradient(to top, rgba(28, 20, 12, 0.35), transparent 46%);
+  cursor: pointer;
+}
+
+.shorts-phone.is-playing .shorts-play {
+  background: transparent;
+}
+
+.shorts-play-icon {
+  width: 68px;
+  height: 68px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, var(--white) 92%, transparent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.2s ease;
+}
+
+.shorts-phone.is-playing .shorts-play-icon {
+  opacity: 0;
+}
+
+.shorts-play-icon::before {
+  content: "";
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  border-style: solid;
+  border-width: 9px 0 9px 16px;
+  border-color: transparent transparent transparent var(--dark-olive);
+}
+
+.shorts-count {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  z-index: 3;
+  margin: 0;
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+}
+
+.shorts-pips {
+  position: absolute;
+  top: 50%;
+  right: 0.35rem;
+  z-index: 3;
+  display: grid;
+  gap: 0.15rem;
+  transform: translateY(-50%);
+}
+
+.shorts-pip {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.shorts-pip::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 7px;
+  width: 3px;
+  height: 14px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.48);
+}
+
+.shorts-pip.is-active::before {
+  height: 18px;
+  top: 0;
+  background-color: var(--white);
+}
+
+.shorts-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.shorts-hint {
+  margin: 0;
+  color: var(--khaki);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shorts-track {
+    transition: none;
+  }
+}
+
 .testimonial-social-card {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.05fr);
@@ -1845,12 +2108,12 @@ textarea::placeholder {
   max-width: 980px;
   margin: 2.5rem auto 0;
   padding: clamp(1.2rem, 2.5vw, 1.85rem);
-  border: 1px solid rgba(139, 156, 169, 0.28);
+  border: 1px solid color-mix(in srgb, var(--beaver) 28%, transparent);
   border-radius: 24px;
   background:
-    radial-gradient(circle at top left, rgba(159, 187, 212, 0.16), transparent 34%),
-    linear-gradient(145deg, rgba(248, 250, 251, 0.96), rgba(231, 238, 242, 0.9));
-  box-shadow: 0 20px 50px rgba(20, 38, 53, 0.08);
+    radial-gradient(circle at top left, color-mix(in srgb, var(--warm-gold) 16%, transparent), transparent 34%),
+    linear-gradient(145deg, color-mix(in srgb, var(--canvas) 96%, transparent), color-mix(in srgb, var(--canvas-alt) 90%, transparent));
+  box-shadow: 0 20px 50px color-mix(in srgb, var(--black-amber) 8%, transparent);
 }
 
 .testimonial-social-copy {
@@ -1891,7 +2154,7 @@ textarea::placeholder {
   min-width: 0 !important;
   margin: 0 !important;
   border-radius: 22px !important;
-  box-shadow: 0 18px 40px rgba(20, 38, 53, 0.12) !important;
+  box-shadow: 0 18px 40px color-mix(in srgb, var(--black-amber) 12%, transparent) !important;
   overflow: hidden !important;
 }
 
@@ -1916,10 +2179,8 @@ textarea::placeholder {
 .faq {
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 10% 8%, rgba(63, 97, 125, 0.12), transparent 30%),
-    radial-gradient(circle at 90% 18%, rgba(139, 156, 169, 0.16), transparent 28%),
-    linear-gradient(180deg, var(--canvas-alt) 0%, var(--canvas) 100%);
+  background-color: color-mix(in srgb, var(--canvas) 24%, var(--white));
+  border-top: 1px solid color-mix(in srgb, var(--dark-olive) 16%, transparent);
 }
 
 .faq::before {
@@ -1928,7 +2189,7 @@ textarea::placeholder {
   inset: 4rem auto auto -8rem;
   width: 22rem;
   height: 22rem;
-  border: 1px solid rgba(63, 97, 125, 0.2);
+  border: 1px solid color-mix(in srgb, var(--khaki) 20%, transparent);
   border-radius: 50%;
 }
 
@@ -1941,13 +2202,10 @@ textarea::placeholder {
   max-width: 1120px;
   margin: 0 auto var(--card-gap);
   padding: clamp(1.35rem, 2.8vw, 2rem);
-  border: 1px solid rgba(63, 97, 125, 0.22);
+  border: 1px solid color-mix(in srgb, var(--khaki) 22%, transparent);
   border-radius: 30px;
-  background:
-    radial-gradient(circle at top left, rgba(159, 187, 212, 0.2), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(139, 156, 169, 0.12), transparent 30%),
-    linear-gradient(145deg, rgba(248, 250, 251, 0.98), rgba(237, 243, 246, 0.95));
-  box-shadow: 0 28px 70px rgba(20, 38, 53, 0.1);
+  background-color: var(--white);
+  box-shadow: 0 28px 70px color-mix(in srgb, var(--black-amber) 10%, transparent);
 }
 
 .faq-live-intro {
@@ -1990,7 +2248,7 @@ textarea::placeholder {
 
 
 .faq-header {
-  border-bottom-color: rgba(43, 70, 93, 0.18);
+  border-bottom-color: color-mix(in srgb, var(--dark-olive) 18%, transparent);
 }
 
 .faq-header .section-note {
@@ -2014,12 +2272,12 @@ textarea::placeholder {
   overflow: hidden;
   max-width: 980px;
   margin: 0 auto var(--card-gap);
-  border: 1px solid rgba(63, 97, 125, 0.45);
+  border: 1px solid color-mix(in srgb, var(--khaki) 45%, transparent);
   border-radius: 24px;
   background:
-    radial-gradient(circle at 10% 0%, rgba(159, 187, 212, 0.34), transparent 34%),
-    linear-gradient(135deg, rgba(159, 187, 212, 0.26), rgba(244, 247, 248, 0.94));
-  box-shadow: 0 24px 64px rgba(20, 38, 53, 0.14);
+    radial-gradient(circle at 10% 0%, color-mix(in srgb, var(--warm-gold) 34%, transparent), transparent 34%),
+    linear-gradient(135deg, color-mix(in srgb, var(--warm-gold) 26%, transparent), color-mix(in srgb, var(--canvas) 94%, transparent));
+  box-shadow: 0 24px 64px color-mix(in srgb, var(--black-amber) 14%, transparent);
 }
 
 .faq-featured > summary {
@@ -2042,12 +2300,12 @@ textarea::placeholder {
   right: 1.4rem;
   width: 42px;
   height: 42px;
-  border: 1px solid rgba(43, 70, 93, 0.18);
+  border: 1px solid color-mix(in srgb, var(--dark-olive) 18%, transparent);
   border-radius: 50%;
   background:
     linear-gradient(var(--dark-olive), var(--dark-olive)) center / 14px 2px no-repeat,
     linear-gradient(var(--dark-olive), var(--dark-olive)) center / 2px 14px no-repeat,
-    rgba(244, 247, 248, 0.44);
+    color-mix(in srgb, var(--canvas) 44%, transparent);
   transform: translateY(-50%);
   transition: background 0.3s ease, transform 0.3s ease;
 }
@@ -2093,16 +2351,16 @@ textarea::placeholder {
 .faq-category {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(43, 70, 93, 0.14);
+  border: 1px solid color-mix(in srgb, var(--dark-olive) 14%, transparent);
   border-radius: 24px;
-  background-color: rgba(248, 250, 251, 0.9);
-  box-shadow: 0 18px 44px rgba(20, 38, 53, 0.07);
+  background-color: var(--white);
+  box-shadow: 0 18px 44px color-mix(in srgb, var(--black-amber) 7%, transparent);
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .faq-category[open] {
-  border-color: rgba(63, 97, 125, 0.38);
-  box-shadow: 0 28px 70px rgba(20, 38, 53, 0.12);
+  border-color: color-mix(in srgb, var(--khaki) 38%, transparent);
+  box-shadow: 0 28px 70px color-mix(in srgb, var(--black-amber) 12%, transparent);
 }
 
 .faq-category > summary {
@@ -2132,12 +2390,12 @@ textarea::placeholder {
   right: 1.4rem;
   width: 42px;
   height: 42px;
-  border: 1px solid rgba(63, 97, 125, 0.25);
+  border: 1px solid color-mix(in srgb, var(--khaki) 25%, transparent);
   border-radius: 50%;
   background:
     linear-gradient(var(--khaki), var(--khaki)) center / 14px 2px no-repeat,
     linear-gradient(var(--khaki), var(--khaki)) center / 2px 14px no-repeat,
-    rgba(63, 97, 125, 0.08);
+    color-mix(in srgb, var(--khaki) 8%, transparent);
   transform: translateY(-50%);
   transition: background 0.3s ease, transform 0.3s ease;
 }
@@ -2181,12 +2439,12 @@ textarea::placeholder {
 }
 
 .faq-item {
-  border-top: 1px solid rgba(139, 156, 169, 0.24);
+  border-top: 1px solid color-mix(in srgb, var(--beaver) 24%, transparent);
   transition: border-color 0.3s ease;
 }
 
 .faq-item[open] {
-  border-color: rgba(63, 97, 125, 0.34);
+  border-color: color-mix(in srgb, var(--khaki) 34%, transparent);
 }
 
 .faq-item > summary {
@@ -2210,7 +2468,7 @@ textarea::placeholder {
   height: 2.05rem;
   border-radius: 999px;
   color: var(--khaki);
-  background-color: rgba(63, 97, 125, 0.09);
+  background-color: color-mix(in srgb, var(--khaki) 9%, transparent);
   font-family: var(--font-display);
   font-size: 0.88rem;
   font-weight: 400;
@@ -2238,7 +2496,7 @@ textarea::placeholder {
 .faq-answer {
   margin: -0.25rem 0 1.2rem 2.95rem;
   padding: 0 1.25rem 0 1.25rem;
-  border-left: 2px solid rgba(63, 97, 125, 0.24);
+  border-left: 2px solid color-mix(in srgb, var(--khaki) 24%, transparent);
   color: var(--light-brown);
   animation: faq-reveal 0.28s ease;
 }
@@ -2262,7 +2520,7 @@ textarea::placeholder {
 .faq-answer a {
   color: var(--dark-olive);
   font-weight: 700;
-  text-decoration-color: rgba(63, 97, 125, 0.45);
+  text-decoration-color: color-mix(in srgb, var(--khaki) 45%, transparent);
   text-underline-offset: 3px;
 }
 
@@ -2294,22 +2552,23 @@ textarea::placeholder {
   margin-top: 0.15rem;
   padding: 0.85rem 1.25rem;
   border-radius: 999px;
-  color: var(--canvas);
-  background: linear-gradient(135deg, var(--khaki), var(--dark-olive));
+  color: var(--black-amber);
+  background: var(--warm-gold);
   font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-decoration: none;
   text-transform: uppercase;
-  box-shadow: 0 12px 24px rgba(43, 70, 93, 0.16);
+  box-shadow: 0 12px 24px color-mix(in srgb, var(--dark-olive) 16%, transparent);
   transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
 
 .contact-consult-btn:hover {
-  filter: brightness(1.05);
+  color: var(--white);
+  background: var(--dark-olive);
   transform: translateY(-1px);
-  box-shadow: 0 16px 30px rgba(43, 70, 93, 0.2);
+  box-shadow: 0 16px 30px color-mix(in srgb, var(--dark-olive) 20%, transparent);
 }
 
 .faq-video-card {
@@ -2320,12 +2579,10 @@ textarea::placeholder {
   max-width: 980px;
   margin: 0 auto var(--card-gap);
   padding: clamp(1.2rem, 2.5vw, 1.85rem);
-  border: 1px solid rgba(63, 97, 125, 0.24);
+  border: 1px solid color-mix(in srgb, var(--khaki) 24%, transparent);
   border-radius: 24px;
-  background:
-    radial-gradient(circle at top left, rgba(159, 187, 212, 0.18), transparent 34%),
-    linear-gradient(145deg, rgba(248, 250, 251, 0.96), rgba(231, 238, 242, 0.92));
-  box-shadow: 0 20px 50px rgba(20, 38, 53, 0.08);
+  background-color: var(--white);
+  box-shadow: 0 20px 50px color-mix(in srgb, var(--black-amber) 8%, transparent);
 }
 
 .faq-video-card-stacked {
@@ -2336,9 +2593,8 @@ textarea::placeholder {
   margin: 0;
   padding: clamp(1rem, 2vw, 1.3rem);
   border-radius: 22px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(242, 246, 248, 0.92));
-  box-shadow: 0 14px 30px rgba(20, 38, 53, 0.08);
+  background-color: var(--white);
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--black-amber) 8%, transparent);
 }
 
 .faq-video-card-stacked .faq-video-copy {
@@ -2351,11 +2607,9 @@ textarea::placeholder {
 }
 
 .faq-video-card-live-featured {
-  border-color: rgba(63, 97, 125, 0.42);
-  background:
-    radial-gradient(circle at top left, rgba(159, 187, 212, 0.28), transparent 38%),
-    linear-gradient(180deg, rgba(251, 253, 254, 0.94), rgba(235, 242, 245, 0.96));
-  box-shadow: 0 20px 44px rgba(20, 38, 53, 0.12);
+  border-color: color-mix(in srgb, var(--khaki) 42%, transparent);
+  background-color: var(--white);
+  box-shadow: 0 20px 44px color-mix(in srgb, var(--black-amber) 12%, transparent);
 }
 
 .faq-video-card-live-featured .faq-video-kicker {
@@ -2395,8 +2649,8 @@ textarea::placeholder {
   order: 1;
   margin-top: 0.15rem;
   border-radius: 20px;
-  background: rgba(20, 38, 53, 0.08);
-  box-shadow: 0 18px 40px rgba(20, 38, 53, 0.12);
+  background: color-mix(in srgb, var(--black-amber) 8%, transparent);
+  box-shadow: 0 18px 40px color-mix(in srgb, var(--black-amber) 12%, transparent);
 }
 
 .faq-video-title,
@@ -2421,7 +2675,7 @@ textarea::placeholder {
 
 .faq-category > summary:focus-visible,
 .faq-item > summary:focus-visible {
-  outline: 3px solid rgba(63, 97, 125, 0.45);
+  outline: 3px solid color-mix(in srgb, var(--khaki) 45%, transparent);
   outline-offset: 4px;
 }
 
@@ -2446,7 +2700,7 @@ footer {
 
 .footer-logo {
   margin-bottom: 2rem;
-  color: var(--dark-section-heading);
+  color: var(--white);
   font-family: var(--font-display);
   font-size: 3rem;
 }
@@ -2468,10 +2722,10 @@ footer {
   height: 42px;
   display: inline-grid;
   place-items: center;
-  border: 1px solid rgba(159, 187, 212, 0.46);
+  border: 1px solid color-mix(in srgb, var(--warm-gold) 46%, transparent);
   border-radius: 50%;
   color: var(--warm-gold);
-  background-color: rgba(244, 247, 248, 0.04);
+  background-color: color-mix(in srgb, var(--canvas) 4%, transparent);
   text-decoration: none;
   transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
@@ -2504,7 +2758,7 @@ footer {
 }
 
 .copyright {
-  color: rgba(244, 247, 248, 0.72);
+  color: color-mix(in srgb, var(--white) 78%, transparent);
   font-size: 0.875rem;
 }
 
@@ -2625,7 +2879,7 @@ footer {
   }
 
   .hero-gradient {
-    background: linear-gradient(to top, var(--black-amber) 0%, rgba(20, 38, 53, 0.58) 48%, transparent 100%);
+    background: linear-gradient(to top, var(--black-amber) 0%, color-mix(in srgb, var(--black-amber) 58%, transparent) 48%, transparent 100%);
   }
 
   .hero-accreditation {
