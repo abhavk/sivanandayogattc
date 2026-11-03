@@ -153,7 +153,7 @@ nav {
   gap: 1.5rem;
   padding: 1rem clamp(1rem, 2vw, 2rem);
   border-bottom: 1px solid color-mix(in srgb, var(--canvas) 12%, transparent);
-  background-color: color-mix(in srgb, var(--black-amber) 82%, transparent);
+  background-color: color-mix(in srgb, var(--black-amber) 75%, transparent);
   backdrop-filter: blur(16px);
   opacity: 1;
   pointer-events: auto;
@@ -195,6 +195,10 @@ nav.is-visible {
   filter: drop-shadow(0 3px 8px color-mix(in srgb, var(--black-amber) 18%, transparent));
   transform-origin: center;
   will-change: transform;
+}
+
+.nav-butterfly.is-on-apply {
+  pointer-events: none;
 }
 
 .nav-butterfly svg {
@@ -565,7 +569,7 @@ nav.is-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 38%;
+  object-position: center 60%;
 }
 
 .hero-gradient {
@@ -712,6 +716,10 @@ nav.is-visible {
   opacity: 1;
 }
 
+.overview-image img.overview-image-in-person {
+  object-position: 50% 40%;
+}
+
 .overview-image-switcher {
   position: absolute;
   bottom: 1.5rem;
@@ -772,12 +780,14 @@ nav.is-visible {
 
 .curriculum .label,
 .benefits .label,
+.testimonials .label,
 .application .label {
   color: var(--warm-gold);
 }
 
 .curriculum .section-title,
 .benefits .section-title,
+.testimonials .section-title,
 .form-info h2,
 .payment-section h3 {
   color: var(--white);
@@ -823,8 +833,8 @@ nav.is-visible {
   transform: rotate(-90deg) scale(1.45);
 }
 
-.bento-item img.bento-img-meditation {
-  transform: rotate(-90deg) scale(1.58);
+.bento-item img.bento-img-how-teach {
+  object-position: 65% 50%;
 }
 
 .bento-item img.bento-img-hatha-yoga {
@@ -843,12 +853,6 @@ nav.is-visible {
 .bento-item.is-open img.bento-img-rotate,
 .bento-item:focus-visible img.bento-img-rotate {
   transform: rotate(-90deg) scale(1.45);
-}
-
-.bento-item:hover img.bento-img-meditation,
-.bento-item.is-open img.bento-img-meditation,
-.bento-item:focus-visible img.bento-img-meditation {
-  transform: rotate(-90deg) scale(1.58);
 }
 
 .bento-item::after {
@@ -1096,11 +1100,18 @@ nav.is-visible {
 
 .benefits {
   color: var(--white);
-  background-color: var(--black-amber);
+  background:
+    radial-gradient(ellipse at 100% 0%, color-mix(in srgb, var(--khaki) 30%, transparent), transparent 52%),
+    radial-gradient(ellipse at 0% 100%, color-mix(in srgb, var(--dark-olive) 70%, transparent), transparent 55%),
+    var(--black-amber);
 }
 
 .benefits .section-header {
   border-bottom-color: var(--dark-olive);
+}
+
+.benefits .section-note {
+  color: var(--beaver);
 }
 
 .benefits-grid {
@@ -1110,14 +1121,119 @@ nav.is-visible {
 }
 
 .benefit-card {
+  position: relative;
   display: grid;
   align-content: start;
-  gap: 0.65rem;
-  padding: clamp(1.1rem, 1.8vw, 1.5rem);
-  border: 1px solid color-mix(in srgb, var(--canvas) 12%, transparent);
+  gap: 1rem;
+  padding: clamp(1.75rem, 3vw, 2.75rem);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--canvas) 14%, transparent);
+  border-radius: 18px;
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--khaki) 18%, transparent), transparent 58%),
+    linear-gradient(150deg, color-mix(in srgb, var(--khaki) 32%, transparent), transparent 62%),
     color-mix(in srgb, var(--canvas) 4%, transparent);
+  outline: none;
+  cursor: pointer;
+  transition:
+    border-color 0.4s ease,
+    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.benefit-card > :not(.benefit-photo) {
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.benefit-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.14;
+  filter: saturate(0.55) brightness(0.85);
+  transform: scale(1.06);
+  transition:
+    opacity 0.6s ease,
+    filter 0.6s ease,
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.benefit-photo-teach {
+  object-position: center 55%;
+}
+
+.benefit-photo-practice {
+  object-position: center 40%;
+}
+
+.benefit-photo-vitality {
+  object-position: center 25%;
+}
+
+.benefit-photo-community {
+  object-position: center 30%;
+}
+
+.benefit-card.is-open,
+.benefit-card:focus-visible {
+  border-color: color-mix(in srgb, var(--warm-gold) 42%, transparent);
+  box-shadow: 0 28px 60px color-mix(in srgb, #000 30%, transparent);
+}
+
+.benefit-card:focus-visible {
+  box-shadow: 0 0 0 3px var(--warm-gold), 0 28px 60px color-mix(in srgb, #000 30%, transparent);
+}
+
+.benefit-card.is-open .benefit-photo,
+.benefit-card:focus-visible .benefit-photo {
+  opacity: 1;
+  filter: none;
+  transform: scale(1);
+}
+
+.benefit-card.is-open > :not(.benefit-photo),
+.benefit-card:focus-visible > :not(.benefit-photo) {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .benefit-card:hover {
+    border-color: color-mix(in srgb, var(--warm-gold) 42%, transparent);
+    box-shadow: 0 28px 60px color-mix(in srgb, #000 30%, transparent);
+    transform: translateY(-4px);
+  }
+
+  .benefit-card:hover .benefit-photo {
+    opacity: 1;
+    filter: none;
+    transform: scale(1);
+  }
+
+  .benefit-card:hover > :not(.benefit-photo) {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.benefit-num {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--warm-gold);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+}
+
+.benefit-num::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--warm-gold) 45%, transparent), transparent);
 }
 
 .benefit-kicker {
@@ -1130,11 +1246,10 @@ nav.is-visible {
 
 .benefit-card h3 {
   display: grid;
-  gap: 0.35rem;
-  max-width: 13ch;
+  gap: 0.55rem;
   color: var(--white);
-  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
-  line-height: 0.98;
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  line-height: 0.95;
 }
 
 .benefit-card h3 span {
@@ -1143,56 +1258,54 @@ nav.is-visible {
   font-weight: 400;
 }
 
-.benefit-card h3.benefit-card-heading-inline {
-  display: flex;
-  align-items: baseline;
-  max-width: none;
-  white-space: nowrap;
-}
-
-.benefit-card h3 span + br + span,
 .benefit-card h3 span + span {
   color: var(--warm-gold);
   font-family: var(--font-body);
-  font-size: 0.62rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   line-height: 1.3;
   text-transform: uppercase;
 }
 
 .benefit-card p {
   max-width: 34rem;
-  color: var(--white);
-  font-size: 1rem;
+  color: color-mix(in srgb, var(--white) 82%, transparent);
+  font-size: 1.05rem;
+  line-height: 1.65;
 }
 
 .benefit-card ul {
   display: grid;
-  gap: 0.5rem;
-  margin-top: 0.35rem;
+  margin-top: 0.5rem;
   padding: 0;
+  border-top: 1px solid color-mix(in srgb, var(--canvas) 14%, transparent);
   list-style: none;
 }
 
 .benefit-card li {
   position: relative;
-  padding-left: 1.15rem;
+  padding: 0.7rem 0 0.7rem 1.6rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--canvas) 10%, transparent);
   color: var(--white);
   font-size: 1rem;
+}
+
+.benefit-card li:last-child {
+  border-bottom: 0;
 }
 
 .benefit-card li::before {
   content: "";
   position: absolute;
-  top: 0.72em;
-  left: 0;
-  width: 0.46rem;
-  height: 0.46rem;
-  border-radius: 50%;
-  background-color: var(--khaki);
+  top: 50%;
+  left: 0.2rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border: 1px solid var(--warm-gold);
+  background-color: color-mix(in srgb, var(--warm-gold) 35%, transparent);
+  transform: translateY(-50%) rotate(45deg);
 }
-
 .teachers {
   background-color: var(--white);
 }
@@ -1769,11 +1882,34 @@ textarea::placeholder {
 }
 
 .testimonials {
-  background-color: var(--white);
+  color: var(--white);
+  background:
+    radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--khaki) 34%, transparent), transparent 58%),
+    var(--dark-olive);
 }
 
 .testimonials-header {
-  border-bottom-color: var(--beaver);
+  border-bottom-color: var(--light-brown);
+}
+
+.testimonials .testimonial-arrow {
+  border-color: color-mix(in srgb, var(--canvas) 34%, transparent);
+  color: var(--canvas);
+}
+
+.testimonials .testimonial-arrow:hover {
+  color: var(--black-amber);
+  background-color: var(--warm-gold);
+}
+
+.testimonials .testimonial-arrow:disabled:hover {
+  color: var(--canvas);
+  background-color: transparent;
+}
+
+.testimonials .testimonial-track:focus-visible,
+.testimonials .testimonial-arrow:focus-visible {
+  outline-color: var(--warm-gold);
 }
 
 .testimonial-carousel {
@@ -2106,8 +2242,151 @@ textarea::placeholder {
   text-align: center;
 }
 
-@media (prefers-reduced-motion: reduce) {
+.testimonials .shorts-hint {
+  color: var(--beaver);
+}
+
+.shorts-hint-wide {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  .shorts-stack {
+    width: 100%;
+    gap: 1.25rem;
+  }
+
+  .shorts-phone {
+    --story-w: clamp(220px, min(21vw, (100vh - 16rem) * 0.5625), 300px);
+    --story-h: calc(var(--story-w) * 16 / 9);
+    --story-gap: clamp(1rem, 2vw, 1.75rem);
+    width: 100%;
+    height: var(--story-h);
+    aspect-ratio: auto;
+    margin-bottom: 2.25rem;
+    overflow: visible;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+    container-type: normal;
+    touch-action: pan-y;
+  }
+
+  .shorts-phone * {
+    touch-action: pan-y;
+  }
+
+  .shorts-viewport {
+    inset: -2rem 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+  }
+
   .shorts-track {
+    --story-offset: calc(-1 * (var(--shorts-index, 0) * (var(--story-w) + var(--story-gap)) + var(--story-w) / 2));
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    flex-direction: row;
+    gap: var(--story-gap);
+    width: max-content;
+    transform: translateX(var(--story-offset));
+    transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .shorts-track.is-bump-next {
+    transform: translateX(calc(var(--story-offset) - 22px));
+  }
+
+  .shorts-track.is-bump-prev {
+    transform: translateX(calc(var(--story-offset) + 22px));
+  }
+
+  .shorts-slide {
+    flex: 0 0 var(--story-w);
+    width: var(--story-w);
+    height: var(--story-h);
+    overflow: hidden;
+    border-radius: 22px;
+    background-color: #1c140c;
+    cursor: pointer;
+    opacity: 0.45;
+    transform: scale(0.84);
+    transition:
+      transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.5s ease,
+      box-shadow 0.65s ease;
+  }
+
+  .shorts-slide:hover {
+    opacity: 0.75;
+  }
+
+  .shorts-slide.is-current {
+    opacity: 1;
+    transform: none;
+    box-shadow: 0 26px 60px color-mix(in srgb, var(--black-amber) 55%, transparent);
+    cursor: default;
+  }
+
+  .shorts-poster {
+    pointer-events: none;
+  }
+
+  .shorts-play {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    width: var(--story-w);
+    height: var(--story-h);
+    border-radius: 22px;
+    transform: translateX(-50%);
+  }
+
+  .shorts-pips {
+    top: calc(100% + 1.35rem);
+    right: auto;
+    left: 50%;
+    display: flex;
+    gap: 0.25rem;
+    transform: translateX(-50%);
+  }
+
+  .shorts-pip::before {
+    top: 7px;
+    left: 2px;
+    width: 14px;
+    height: 3px;
+    background-color: color-mix(in srgb, var(--canvas) 35%, transparent);
+    transition: background-color 0.3s ease;
+  }
+
+  .shorts-pip.is-active::before {
+    top: 7px;
+    left: 0;
+    width: 18px;
+    height: 3px;
+    background-color: var(--warm-gold);
+  }
+
+  .shorts-switch .testimonial-arrow span {
+    display: inline-block;
+    transform: rotate(-90deg);
+  }
+
+  .shorts-hint-touch {
+    display: none;
+  }
+
+  .shorts-hint-wide {
+    display: inline;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shorts-track,
+  .shorts-slide {
     transition: none;
   }
 }
@@ -2774,6 +3053,38 @@ footer {
   font-size: 0.875rem;
 }
 
+.reveal-ready :is(
+  .section-header,
+  .overview-text,
+  .overview-image,
+  .benefit-card,
+  .teacher-card,
+  .bento-item,
+  .schedule-card,
+  .testimonial-carousel,
+  .price-card,
+  .form-info,
+  .application-form,
+  .faq-live-hub,
+  .faq-featured,
+  .faq-category,
+  .faq-contact
+):not(.is-revealed) {
+  opacity: 0;
+  translate: 0 28px;
+}
+
+.reveal-ready .is-revealed {
+  animation: reveal-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms) backwards;
+}
+
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    translate: 0 28px;
+  }
+}
+
 @media (max-width: 1180px) {
   .teacher-card {
     flex-basis: calc(50% - 0.5rem);
@@ -2887,7 +3198,7 @@ footer {
   }
 
   .hero-img-container img {
-    object-position: center center;
+    object-position: center 75%;
   }
 
   .hero-gradient {
@@ -2942,6 +3253,14 @@ footer {
 
   .bento-item:nth-child(n) {
     grid-column: span 12;
+  }
+
+  .bento-item:nth-child(5) {
+    grid-row: span 3;
+  }
+
+  .bento-item:nth-child(5) .bento-details {
+    max-height: 220px;
   }
 
   .schedule-container {

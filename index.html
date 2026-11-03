@@ -29,6 +29,11 @@
       rel="stylesheet"
     >
     <link rel="stylesheet" href="styles.css">
+    <script>
+      if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("reveal-ready");
+      }
+    </script>
   </head>
   <body>
     <nav>
@@ -68,12 +73,12 @@
       </a>
       <div class="nav-links">
         <a href="#overview">Overview</a>
+        <a href="#testimonials">Stories</a>
+        <a href="#teachers">Teachers</a>
         <a href="#curriculum">Curriculum</a>
         <a href="#schedule">Schedule</a>
         <a href="#benefits">Benefits</a>
-        <a href="#teachers">Teachers</a>
         <a href="#pricing">Fees</a>
-        <a href="#testimonials">Stories</a>
         <a href="#faq">FAQ</a>
         <a href="#apply" class="btn btn-primary nav-cta">Apply N<span class="apply-o">o</span>w</a>
       </div>
@@ -81,7 +86,7 @@
 
     <section class="hero">
       <div class="hero-img-container">
-        <img src="assets/asanas.webp" alt="Sivananda students meditating in morning light">
+        <img src="assets/header-alt-2.jpg" alt="Sivananda students meditating in morning light">
         <div class="hero-gradient"></div>
       </div>
 
@@ -145,295 +150,184 @@
         </div>
         <div class="overview-image">
           <img
-            class="overview-image-option is-active"
+            class="overview-image-option overview-image-in-person is-active"
+            src="assets/in-person.jpg"
+            alt="Students practising yoga in person at Sivananda Yoga Centre Gurgaon"
+            data-overview-image="in-person"
+          >
+          <img
+            class="overview-image-option"
             src="assets/courseoverview.webp"
             alt="Online Hatha yoga theory class at Sivananda training"
             data-overview-image="online"
           >
-          <img
-            class="overview-image-option"
-            src="assets/inperson.jpeg"
-            alt="Students practising yoga in person at Sivananda Yoga Centre Gurgaon"
-            data-overview-image="in-person"
-          >
           <div class="overview-image-switcher" aria-label="Choose course view">
-            <button class="is-active" type="button" data-overview-view="online" aria-pressed="true">Online</button>
-            <button type="button" data-overview-view="in-person" aria-pressed="false">In person</button>
+            <button class="is-active" type="button" data-overview-view="in-person" aria-pressed="true">In person</button>
+            <button type="button" data-overview-view="online" aria-pressed="false">Online</button>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="curriculum" class="curriculum">
+    <section id="testimonials" class="testimonials">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header testimonials-header">
           <div>
-            <span class="label">Syllabus</span>
-            <h2 class="section-title">Course Curriculum</h2>
+            <span class="label">Testimonials</span>
+            <h2 class="section-title">Student Experiences</h2>
           </div>
         </div>
 
-        <div class="bento-grid">
-          <div class="bento-item" tabindex="0">
-            <img src="assets/asanas2.webp" alt="Yoga Asanas">
-            <div class="bento-content">
-              <span class="bento-num">01</span>
-              <div>
-                <h3 class="bento-title">Yoga Asanas</h3>
-                <ul class="bento-details">
-                  <li>The sun salutation and the twelve basic yoga postures</li>
-                  <li>Advanced variations</li>
-                  <li>Effects of asanas on the physical and astral body</li>
-                  <li>Proper posture alignment, deep relaxation, release of blocked energy</li>
-                  <li>Benefits of Yoga Asanas</li>
-                </ul>
+        <div class="testimonial-carousel" data-carousel>
+          <div class="testimonial-track is-shorts" role="region" aria-label="Student testimonials" aria-live="polite" tabindex="0" data-carousel-track>
+            <article class="testimonial-card testimonial-card-shorts is-active" data-shorts-card>
+              <div class="shorts-stack" data-shorts>
+                <div class="shorts-phone">
+                  <div class="shorts-viewport" data-shorts-viewport>
+                    <div class="shorts-track" data-shorts-track>
+                      <div class="shorts-slide">
+                        <img class="shorts-poster" alt="" src="https://i.ytimg.com/vi/KvTZP4SnLHM/hqdefault.jpg">
+                        <iframe data-shorts-id="KvTZP4SnLHM" title="Student story 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                      <div class="shorts-slide">
+                        <img class="shorts-poster" alt="" src="https://i.ytimg.com/vi/2isQZVx3jUc/hqdefault.jpg">
+                        <iframe data-shorts-id="2isQZVx3jUc" title="Student story 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                      <div class="shorts-slide">
+                        <img class="shorts-poster" alt="" src="https://i.ytimg.com/vi/ZgT2NlYgL94/hqdefault.jpg">
+                        <iframe data-shorts-id="ZgT2NlYgL94" title="Student story 3" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                      <div class="shorts-slide">
+                        <img class="shorts-poster" alt="" src="https://i.ytimg.com/vi/Q9jUZRoh6Jo/hqdefault.jpg">
+                        <iframe data-shorts-id="Q9jUZRoh6Jo" title="Student story 4" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                      <div class="shorts-slide">
+                        <img class="shorts-poster" alt="" src="https://i.ytimg.com/vi/bKZvD47gdCw/hqdefault.jpg">
+                        <iframe data-shorts-id="bKZvD47gdCw" title="Student story 5" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                      <div class="shorts-slide">
+                        <img class="shorts-poster" alt="" src="https://i.ytimg.com/vi/h9T2HVMWueU/hqdefault.jpg">
+                        <iframe data-shorts-id="h9T2HVMWueU" title="Student story 6" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                      <div class="shorts-slide">
+                        <img class="shorts-poster" alt="" src="https://i.ytimg.com/vi/gVyZ33Em6Bg/hqdefault.jpg">
+                        <iframe data-shorts-id="gVyZ33Em6Bg" title="Student story 7" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                      <div class="shorts-slide">
+                        <img class="shorts-poster" alt="" src="https://i.ytimg.com/vi/vVze6gsP3mU/hqdefault.jpg">
+                        <iframe data-shorts-id="vVze6gsP3mU" title="Student story 8" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="shorts-play" type="button" data-shorts-play aria-label="Play student story 1">
+                    <span class="shorts-play-icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="shorts-pips" aria-label="Choose a student story">
+                    <button class="shorts-pip is-active" type="button" aria-label="Student story 1" aria-current="true" data-shorts-jump="0"></button>
+                    <button class="shorts-pip" type="button" aria-label="Student story 2" data-shorts-jump="1"></button>
+                    <button class="shorts-pip" type="button" aria-label="Student story 3" data-shorts-jump="2"></button>
+                    <button class="shorts-pip" type="button" aria-label="Student story 4" data-shorts-jump="3"></button>
+                    <button class="shorts-pip" type="button" aria-label="Student story 5" data-shorts-jump="4"></button>
+                    <button class="shorts-pip" type="button" aria-label="Student story 6" data-shorts-jump="5"></button>
+                    <button class="shorts-pip" type="button" aria-label="Student story 7" data-shorts-jump="6"></button>
+                    <button class="shorts-pip" type="button" aria-label="Student story 8" data-shorts-jump="7"></button>
+                  </div>
+                </div>
+                <div class="shorts-switch">
+                  <button class="testimonial-arrow" type="button" data-shorts-prev aria-label="Previous story" disabled>
+                    <span aria-hidden="true">↑</span>
+                  </button>
+                  <p class="shorts-hint">
+                    <span class="shorts-hint-touch">Swipe up for the next story</span>
+                    <span class="shorts-hint-wide">Click a story or use the arrows</span>
+                  </p>
+                  <button class="testimonial-arrow" type="button" data-shorts-next aria-label="Next story">
+                    <span aria-hidden="true">↓</span>
+                  </button>
+                </div>
               </div>
-            </div>
+            </article>
+
+            <!--
+            <article class="testimonial-card" aria-hidden="true">
+              <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+              <p class="testimonial-text">
+                The TTC program has been nothing short of a transformational journey. The classes we engaged in,
+                from Asanas to pranayama to meditation and all the lectures have helped me cultivate greater
+                discipline, balance and calm in my day to day life. Physically too, I am a lot more energetic and
+                stronger. I am amazed at how the principles and philosophy of yoga learnt during the program has
+                got effortlessly and seamlessly integrated into my daily life making me more self aware, mindful and
+                productive. It truly was one of the most amazing experiences of my life, layered with learnings,
+                some of which I am still processing.
+              </p>
+              <p class="testimonial-text">
+                Kudos to the SYGC team whose passion and commitment is just unparalleled. It's Arun and the team
+                of teachers and their expertise and dedication that make this program stand apart. I would highly
+                highly recommend this program to anyone looking to deepen their practice and improve the quality
+                of their life.
+              </p>
+              <div class="testimonial-author">— Deepthi</div>
+            </article>
+
+            <article class="testimonial-card" aria-hidden="true">
+              <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+              <p class="testimonial-text">
+                It was a challenging experience but a rewarding one. I came to the course with a physical limitation
+                and an emotional burden and I left with insights to deal with both.
+              </p>
+              <p class="testimonial-text">
+                Arun Pandala is an exceptional master and teacher, and the team is very knowledgable and professional.
+                In what concerns the yoga teaching training, the standards are high and the team is very informative
+                and details oriented to ensure graduates are capable and ready to teach.
+              </p>
+              <p class="testimonial-text">
+                I lived with colleagues and teachers for a month and I feel I have a new family that I already miss.
+              </p>
+              <div class="testimonial-author">— Sulaf</div>
+            </article>
+
+            <article class="testimonial-card" aria-hidden="true">
+              <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+              <p class="testimonial-text">
+                I came over from the US for this course very specifically because of my impression of the excellence
+                of the Gurgaon Sivananda teachers based on my online experiences with them. The course proved to
+                exceed my expectations. Everything was so well designed and created with intentional and positive
+                purpose. I was fully immersed in the ashram life while I was there and I grew both physically and
+                intellectually.
+              </p>
+              <p class="testimonial-text">
+                I knew that leaving the ashram and returning home to a different pace may be a challenge, and it
+                was, but the simplicity and profundity of the basis of the Sivananda system has provided a solid
+                foundation which I feel as an accessible grounding point.
+              </p>
+              <p class="testimonial-text">
+                I have an enhanced clarity that supports me in process and decision making. My experience was
+                absolutely enriching and I am grateful for the joy of further engaging with the new found community.
+              </p>
+              <div class="testimonial-author">— Andrea</div>
+            </article>
+            -->
           </div>
 
-          <div class="bento-item" tabindex="0">
-            <img class="bento-img-rotate" src="assets/CS2A2836.webp" alt="Pranayama practice">
-            <div class="bento-content">
-              <span class="bento-num">02</span>
-              <div>
-                <h3 class="bento-title">Pranayama</h3>
-                <ul class="bento-details">
-                  <li>The basic practices: Kapalabhati, Anuloma Viloma (alternate nostril breathing)</li>
-                  <li>Advanced pranayama exercises</li>
-                </ul>
-              </div>
+          <!--
+          <div class="testimonial-controls">
+            <button class="testimonial-arrow testimonial-arrow-prev" type="button" aria-label="Previous testimonial" data-carousel-prev>
+              <span aria-hidden="true">←</span>
+            </button>
+            <div class="testimonial-dots" aria-label="Choose a testimonial" data-carousel-dots>
+              <button class="testimonial-dot is-active" type="button" aria-label="Show student video stories" aria-current="true" data-carousel-dot="0"></button>
+              <button class="testimonial-dot" type="button" aria-label="Show Deepthi testimonial" data-carousel-dot="1"></button>
+              <button class="testimonial-dot" type="button" aria-label="Show Sulaf testimonial" data-carousel-dot="2"></button>
+              <button class="testimonial-dot" type="button" aria-label="Show Andrea testimonial" data-carousel-dot="3"></button>
             </div>
+            <button class="testimonial-arrow testimonial-arrow-next" type="button" aria-label="Next testimonial" data-carousel-next>
+              <span aria-hidden="true">→</span>
+            </button>
           </div>
-
-          <div class="bento-item" tabindex="0">
-            <img src="assets/kriyas.webp" alt="Kriyas">
-            <div class="bento-content">
-              <span class="bento-num">03</span>
-              <div>
-                <h3 class="bento-title">Kriyas</h3>
-                <ul class="bento-details">
-                  <li>The six classical exercises for purifying the body</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="bento-item" tabindex="0">
-            <img class="bento-img-rotate bento-img-hatha-yoga" src="assets/hathayoga2.webp" alt="Hatha Yoga Theory">
-            <div class="bento-content">
-              <span class="bento-num">04</span>
-              <div>
-                <h3 class="bento-title">Hatha Yoga Theory</h3>
-                <ul class="bento-details">
-                  <li>The astral body</li>
-                  <li>The nadis (energy channels) and chakras (energy centers)</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="bento-item" tabindex="0">
-            <img class="bento-img-rotate" src="assets/howtoteach2.JPG" alt="How to Teach">
-      
-            <div class="bento-content">
-              <span class="bento-num">05</span>
-              <div>
-                <h3 class="bento-title">How to Teach</h3>
-                <ul class="bento-details">
-                  <li>How to teach the sun salutation and the twelve basic postures</li>
-                  <li>Setting up a proper environment for class</li>
-                  <li>The basic class</li>
-                  <li>How to teach beginners and intermediate students</li>
-                  <li>How to teach children, the elderly, and prenatal yoga</li>
-                  <li>How to correct a student doing Asanas</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="bento-item" tabindex="0">
-            <img src="assets/philosophy_psychology.avif" alt="Yoga Philosophy and Psychology">
-            <div class="bento-content">
-              <span class="bento-num">06</span>
-              <div>
-                <h3 class="bento-title">Philosophy &amp; Psychology</h3>
-                <ul class="bento-details">
-                  <li>The four paths of Yoga: Karma Yoga (selfless service), Bhakti Yoga (the path of devotion, including attendance at devotional rituals); Raja Yoga (mind control), and Jnana Yoga (the path of wisdom and realization)</li>
-                  <li>Psychology of the spiritual aspirant</li>
-                  <li>The law of karma</li>
-                  <li>Kundalini yoga</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="bento-item" tabindex="0">
-            <img src="assets/anatomy2.webp" alt="Anatomy and Physiology">
-            <div class="bento-content">
-              <span class="bento-num">07</span>
-              <div>
-                <h3 class="bento-title">Anatomy &amp; Physiology</h3>
-                <ul class="bento-details">
-                  <li>The effects of hatha yoga practices on the major body systems</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="bento-item" tabindex="0">
-            <img src="assets/CS2A2937.webp" alt="Yogic Diet and Nutrition">
-            <div class="bento-content">
-              <span class="bento-num">08</span>
-              <div>
-                <h3 class="bento-title">Yogic Diet &amp; Nutrition</h3>
-                <ul class="bento-details">
-                  <li>Influence of diet on the mind</li>
-                  <li>Proper diet</li>
-                  <li>Nutrition according to Yogic guidelines</li>
-                  <li>Ethical, health and spiritual reasons for vegetarianism</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="bento-item" tabindex="0">
-            <img class="bento-img-rotate bento-img-meditation" src="assets/meditation.webp" alt="Meditation">
-            <div class="bento-content">
-              <span class="bento-num">09</span>
-              <div>
-                <h3 class="bento-title">Meditation</h3>
-                <ul class="bento-details">
-                  <li>Twelve-step guideline to meditation</li>
-                  <li>The benefits of meditation</li>
-                  <li>Mantras, mantra-initiation (if requested)</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="bento-item" tabindex="0">
-            <img src="assets/kirtan.webp" alt="Kirtan">
-            <div class="bento-content">
-              <span class="bento-num">10</span>
-              <div>
-                <h3 class="bento-title">Kirtan</h3>
-                <ul class="bento-details">
-                  <li>Positive effects of chanting on the emotions</li>
-                  <li>Correct pronunciation and mental attitude</li>
-                  <li>Learning classical Sanskrit chants</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="bento-item" tabindex="0">
-            <img src="assets/gita.webp" alt="Bhagavad Gita">
-            <div class="bento-content">
-              <span class="bento-num">11</span>
-              <div>
-                <h3 class="bento-title">Bhagavad Gita</h3>
-                <ul class="bento-details">
-                  <li>Study and commentary of the classical scripture</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="schedule" class="schedule">
-      <div class="container">
-        <div class="section-header schedule-header">
-          <div>
-            <span class="label">Daily Rhythm</span>
-            <h2 class="section-title color-dark-olive">Course Schedule</h2>
-          </div>
-          <p class="text-sm section-note">A disciplined training rhythm with practice, study, chanting, and rest woven through the week.</p>
+          -->
         </div>
 
-        <div class="schedule-container">
-          <div class="schedule-card">
-            <h3>Weekends Schedule</h3>
-            <div class="schedule-list">
-              <p><strong>6.15 am</strong> <span>Online room opens, camera on, audio off</span></p>
-              <p><strong>6.30 am</strong> <span>Asana and Pranayama class</span></p>
-              <p><strong>8.30 am</strong> <span>Tea and comfort break</span></p>
-              <p><strong>8.45 am</strong> <span>Main Lecture on philosophy</span></p>
-              <p><strong>10.15 am</strong> <span>Brunch (room is closed)</span></p>
-              <p><strong>2.15 pm</strong> <span>Meditation, chanting, arati</span></p>
-              <p><strong>3.45 pm</strong> <span>Comfort break</span></p>
-              <p><strong>4.00 pm</strong> <span>Asana and Pranayama class</span></p>
-              <p><strong>6.15 pm</strong> <span>Room closed for the day</span></p>
-            </div>
-            <p class="schedule-note">* Attendance at all activities is mandatory</p>
-          </div>
-
-          <div class="schedule-card">
-            <h3>Weekdays Schedule</h3>
-            <div class="schedule-list">
-              <p><strong>Monday 6.30 - 7.30 am</strong> <span>Chanting/Bhagavad Gita</span></p>
-              <p><strong>Tuesday 6.30 - 7.30 am</strong> <span>Asana and Pranayama class</span></p>
-              <p><strong>Wednesday</strong> <span>FREE DAY</span></p>
-              <p><strong>Thursday 6.30 - 7.30 am</strong> <span>Asana and Pranayama class</span></p>
-              <p><strong>Friday 6.30 - 7.30 am</strong> <span>Chanting/Bhagavad Gita</span></p>
-            </div>
-            <p class="schedule-note">* Weekday classes are online only. Attendance at all activities is mandatory.</p>
-          </div>
         </div>
-      </div>
-    </section>
-
-    <section id="benefits" class="benefits">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="label color-khaki">Why Attend</span>
-            <h2 class="section-title">The Transformation</h2>
-          </div>
-        </div>
-
-        <div class="benefits-grid">
-          <article class="benefit-card">
-            <h3 class="benefit-card-heading-inline"><span>Teach</span><span>with confidence</span></h3>
-            <!-- <p>Prepare to teach through a recognized lineage, structured training, and practical methodology.</p> -->
-            <ul>
-              <li>Internationally Valid Certificate</li>
-              <li>Take Care of Family and Friends</li>
-            </ul>
-          </article>
-
-          <article class="benefit-card">
-            <h3 class="benefit-card-heading-inline"><span>Practice</span><span>living the philosophy</span></h3>
-            <!-- <p>Study teachings that move yoga from exercise into daily choices, relationships, and self-study.</p> -->
-            <ul>
-              <li>Become a Better Version of Yourself</li>
-              <li>A Happier and More Fulfilling Life</li>
-              <li>The Yoga Philosophy of Life</li>
-            </ul>
-          </article>
-
-          <article class="benefit-card">
-            <h3 class="benefit-card-heading-inline"><span>Vitality</span><span>of body and mind</span></h3>
-            <!-- <p>Develop energy through asana, pranayama, relaxation, food awareness, and repeated intelligent practice.</p> -->
-            <ul>
-              <li>Ancient Techniques for Health</li>
-              <li>Higher Levels of Energy</li>
-              <li>Fitness, Strength, Stamina, Flexibility</li>
-              <li>Peace and Harmony</li>
-            </ul>
-          </article>
-
-          <article class="benefit-card">
-            <h3 class="benefit-card-heading-inline"><span>Community</span><span>of seekers</span></h3>
-            <!-- <p>Train with sincere seekers and bring the benefits of practice into your immediate community.</p> -->
-            <ul>
-              <li>A Like-Minded Group of People</li>
-              <li>Continuing Practice</li>
-            </ul>
-          </article>
-        </div>
-
       </div>
     </section>
 
@@ -510,7 +404,7 @@
 
           <article class="teacher-card" tabindex="0">
             <div class="teacher-img">
-              <img src="assets/yashika.jpeg" alt="Yashika Singh">
+              <img src="assets/yashika-web.jpg" alt="Yashika Singh">
               <div class="teacher-tags" aria-label="Yashika Singh qualifications">
                 <span class="teacher-tag">RYT 200</span>
               </div>
@@ -627,6 +521,287 @@
                 </div>
               </div>
             </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="curriculum" class="curriculum">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="label">Syllabus</span>
+            <h2 class="section-title">Course Curriculum</h2>
+          </div>
+        </div>
+
+        <div class="bento-grid">
+          <div class="bento-item" tabindex="0">
+            <img src="assets/asanas2.webp" alt="Yoga Asanas">
+            <div class="bento-content">
+              <span class="bento-num">01</span>
+              <div>
+                <h3 class="bento-title">Yoga Asanas</h3>
+                <ul class="bento-details">
+                  <li>The sun salutation and the twelve basic yoga postures</li>
+                  <li>Advanced variations</li>
+                  <li>Effects of asanas on the physical and astral body</li>
+                  <li>Proper posture alignment, deep relaxation, release of blocked energy</li>
+                  <li>Benefits of Yoga Asanas</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-item" tabindex="0">
+            <img class="bento-img-rotate" src="assets/CS2A2836.webp" alt="Pranayama practice">
+            <div class="bento-content">
+              <span class="bento-num">02</span>
+              <div>
+                <h3 class="bento-title">Pranayama</h3>
+                <ul class="bento-details">
+                  <li>The basic practices: Kapalabhati, Anuloma Viloma (alternate nostril breathing)</li>
+                  <li>Advanced pranayama exercises</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-item" tabindex="0">
+            <img src="assets/kriyas-alt.jpg" alt="Kriyas">
+            <div class="bento-content">
+              <span class="bento-num">03</span>
+              <div>
+                <h3 class="bento-title">Kriyas</h3>
+                <ul class="bento-details">
+                  <li>The six classical exercises for purifying the body</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-item" tabindex="0">
+            <img class="bento-img-rotate bento-img-hatha-yoga" src="assets/hathayoga2.webp" alt="Hatha Yoga Theory">
+            <div class="bento-content">
+              <span class="bento-num">04</span>
+              <div>
+                <h3 class="bento-title">Hatha Yoga Theory</h3>
+                <ul class="bento-details">
+                  <li>The astral body</li>
+                  <li>The nadis (energy channels) and chakras (energy centers)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-item" tabindex="0">
+            <img class="bento-img-how-teach" src="assets/how-teach-alt.jpg" alt="How to Teach">
+      
+            <div class="bento-content">
+              <span class="bento-num">05</span>
+              <div>
+                <h3 class="bento-title">How to Teach</h3>
+                <ul class="bento-details">
+                  <li>How to teach the sun salutation and the twelve basic postures</li>
+                  <li>Setting up a proper environment for class</li>
+                  <li>The basic class</li>
+                  <li>How to teach beginners and intermediate students</li>
+                  <li>How to teach children, the elderly, and prenatal yoga</li>
+                  <li>How to correct a student doing Asanas</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-item" tabindex="0">
+            <img src="assets/philosophy.jpg" alt="Yoga Philosophy and Psychology">
+            <div class="bento-content">
+              <span class="bento-num">06</span>
+              <div>
+                <h3 class="bento-title">Philosophy &amp; Psychology</h3>
+                <ul class="bento-details">
+                  <li>The four paths of Yoga: Karma Yoga (selfless service), Bhakti Yoga (the path of devotion, including attendance at devotional rituals); Raja Yoga (mind control), and Jnana Yoga (the path of wisdom and realization)</li>
+                  <li>Psychology of the spiritual aspirant</li>
+                  <li>The law of karma</li>
+                  <li>Kundalini yoga</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-item" tabindex="0">
+            <img src="assets/anatomy2.webp" alt="Anatomy and Physiology">
+            <div class="bento-content">
+              <span class="bento-num">07</span>
+              <div>
+                <h3 class="bento-title">Anatomy &amp; Physiology</h3>
+                <ul class="bento-details">
+                  <li>The effects of hatha yoga practices on the major body systems</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-item" tabindex="0">
+            <img src="assets/CS2A2937.webp" alt="Yogic Diet and Nutrition">
+            <div class="bento-content">
+              <span class="bento-num">08</span>
+              <div>
+                <h3 class="bento-title">Yogic Diet &amp; Nutrition</h3>
+                <ul class="bento-details">
+                  <li>Influence of diet on the mind</li>
+                  <li>Proper diet</li>
+                  <li>Nutrition according to Yogic guidelines</li>
+                  <li>Ethical, health and spiritual reasons for vegetarianism</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-item" tabindex="0">
+            <img src="assets/meditation-alt.jpg" alt="Meditation">
+            <div class="bento-content">
+              <span class="bento-num">09</span>
+              <div>
+                <h3 class="bento-title">Meditation</h3>
+                <ul class="bento-details">
+                  <li>Twelve-step guideline to meditation</li>
+                  <li>The benefits of meditation</li>
+                  <li>Mantras, mantra-initiation (if requested)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-item" tabindex="0">
+            <img src="assets/kirtan.webp" alt="Kirtan">
+            <div class="bento-content">
+              <span class="bento-num">10</span>
+              <div>
+                <h3 class="bento-title">Kirtan</h3>
+                <ul class="bento-details">
+                  <li>Positive effects of chanting on the emotions</li>
+                  <li>Correct pronunciation and mental attitude</li>
+                  <li>Learning classical Sanskrit chants</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-item" tabindex="0">
+            <img src="assets/gita.webp" alt="Bhagavad Gita">
+            <div class="bento-content">
+              <span class="bento-num">11</span>
+              <div>
+                <h3 class="bento-title">Bhagavad Gita</h3>
+                <ul class="bento-details">
+                  <li>Study and commentary of the classical scripture</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" class="schedule">
+      <div class="container">
+        <div class="section-header schedule-header">
+          <div>
+            <span class="label">Daily Rhythm</span>
+            <h2 class="section-title color-dark-olive">Course Schedule</h2>
+          </div>
+          <p class="text-sm section-note">A disciplined training rhythm with practice, study, chanting, and rest woven through the week.</p>
+        </div>
+
+        <div class="schedule-container">
+          <div class="schedule-card">
+            <h3>Weekends Schedule</h3>
+            <div class="schedule-list">
+              <p><strong>6.15 am</strong> <span>Online room opens, camera on, audio off</span></p>
+              <p><strong>6.30 am</strong> <span>Asana and Pranayama class</span></p>
+              <p><strong>8.30 am</strong> <span>Tea and comfort break</span></p>
+              <p><strong>8.45 am</strong> <span>Main Lecture on philosophy</span></p>
+              <p><strong>10.15 am</strong> <span>Brunch (room is closed)</span></p>
+              <p><strong>2.15 pm</strong> <span>Meditation, chanting, arati</span></p>
+              <p><strong>3.45 pm</strong> <span>Comfort break</span></p>
+              <p><strong>4.00 pm</strong> <span>Asana and Pranayama class</span></p>
+              <p><strong>6.15 pm</strong> <span>Room closed for the day</span></p>
+            </div>
+            <p class="schedule-note">* Attendance at all activities is mandatory</p>
+          </div>
+
+          <div class="schedule-card">
+            <h3>Weekdays Schedule</h3>
+            <div class="schedule-list">
+              <p><strong>Monday 6.30 - 7.30 am</strong> <span>Chanting/Bhagavad Gita</span></p>
+              <p><strong>Tuesday 6.30 - 7.30 am</strong> <span>Asana and Pranayama class</span></p>
+              <p><strong>Wednesday</strong> <span>FREE DAY</span></p>
+              <p><strong>Thursday 6.30 - 7.30 am</strong> <span>Asana and Pranayama class</span></p>
+              <p><strong>Friday 6.30 - 7.30 am</strong> <span>Chanting/Bhagavad Gita</span></p>
+            </div>
+            <p class="schedule-note">* Weekday classes are online only. Attendance at all activities is mandatory.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits" class="benefits">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="label color-khaki">Why Attend</span>
+            <h2 class="section-title">The Transformation</h2>
+          </div>
+          <p class="text-sm section-note">More than a certificate: a training that changes how you live, practise, and teach.</p>
+        </div>
+
+        <div class="benefits-grid">
+          <article class="benefit-card" tabindex="0">
+            <img class="benefit-photo benefit-photo-teach" src="assets/Why-Teach.jpg" alt="Student demonstrating a backbend during a Sivananda teacher training class" loading="lazy">
+            <span class="benefit-num" aria-hidden="true">01</span>
+            <h3><span>Teach</span><span>with confidence</span></h3>
+            <p>Prepare to teach through a recognized lineage, structured training, and practical methodology.</p>
+            <ul>
+              <li>Internationally Valid Certificate</li>
+              <li>Take Care of Family and Friends</li>
+            </ul>
+          </article>
+
+          <article class="benefit-card" tabindex="0">
+            <img class="benefit-photo benefit-photo-practice" src="assets/Why-Practice-web.jpg" alt="Student and teacher sharing a ceremony at Sivananda Yoga Centre Gurgaon" loading="lazy">
+            <span class="benefit-num" aria-hidden="true">02</span>
+            <h3><span>Practice</span><span>living the philosophy</span></h3>
+            <p>Study teachings that move yoga from exercise into daily choices, relationships, and self-study.</p>
+            <ul>
+              <li>Become a Better Version of Yourself</li>
+              <li>A Happier and More Fulfilling Life</li>
+              <li>The Yoga Philosophy of Life</li>
+            </ul>
+          </article>
+
+          <article class="benefit-card" tabindex="0">
+            <img class="benefit-photo benefit-photo-vitality" src="assets/Why-Vitality-Alt.jpg" alt="Students practising asanas together in an open-air hall" loading="lazy">
+            <span class="benefit-num" aria-hidden="true">03</span>
+            <h3><span>Vitality</span><span>of body and mind</span></h3>
+            <p>Develop energy through asana, pranayama, relaxation, food awareness, and repeated intelligent practice.</p>
+            <ul>
+              <li>Ancient Techniques for Health</li>
+              <li>Higher Levels of Energy</li>
+              <li>Fitness, Strength, Stamina, Flexibility</li>
+              <li>Peace and Harmony</li>
+            </ul>
+          </article>
+
+          <article class="benefit-card" tabindex="0">
+            <img class="benefit-photo benefit-photo-community" src="assets/Why-Community.JPG" alt="Two smiling students among fellow trainees in yellow Sivananda jackets" loading="lazy">
+            <span class="benefit-num" aria-hidden="true">04</span>
+            <h3><span>Community</span><span>of seekers</span></h3>
+            <p>Train with sincere seekers and bring the benefits of practice into your immediate community.</p>
+            <ul>
+              <li>A Like-Minded Group of People</li>
+              <li>Continuing Practice</li>
+            </ul>
           </article>
         </div>
       </div>
@@ -774,165 +949,6 @@
               <img src="assets/QRcodeUPI.avif" alt="UPI payment QR code for Sivananda Yoga Centre Gurgaon">
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="testimonials" class="testimonials">
-      <div class="container">
-        <div class="section-header testimonials-header">
-          <div>
-            <span class="label">Testimonials</span>
-            <h2 class="section-title color-dark-olive">Student Experiences</h2>
-          </div>
-        </div>
-
-        <div class="testimonial-carousel" data-carousel>
-          <div class="testimonial-track is-shorts" role="region" aria-label="Student testimonials" aria-live="polite" tabindex="0" data-carousel-track>
-            <article class="testimonial-card testimonial-card-shorts is-active" data-shorts-card>
-              <div class="shorts-stack" data-shorts>
-                <div class="shorts-phone">
-                  <div class="shorts-viewport" data-shorts-viewport>
-                    <div class="shorts-track" data-shorts-track>
-                      <div class="shorts-slide">
-                        <img class="shorts-poster" alt="" src="https://i.ytimg.com/vi/KvTZP4SnLHM/hqdefault.jpg">
-                        <iframe data-shorts-id="KvTZP4SnLHM" title="Student story 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                      </div>
-                      <div class="shorts-slide">
-                        <img class="shorts-poster" alt="" src="https://i.ytimg.com/vi/2isQZVx3jUc/hqdefault.jpg">
-                        <iframe data-shorts-id="2isQZVx3jUc" title="Student story 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                      </div>
-                      <div class="shorts-slide">
-                        <img class="shorts-poster" alt="" src="https://i.ytimg.com/vi/ZgT2NlYgL94/hqdefault.jpg">
-                        <iframe data-shorts-id="ZgT2NlYgL94" title="Student story 3" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                      </div>
-                      <div class="shorts-slide">
-                        <img class="shorts-poster" alt="" src="https://i.ytimg.com/vi/Q9jUZRoh6Jo/hqdefault.jpg">
-                        <iframe data-shorts-id="Q9jUZRoh6Jo" title="Student story 4" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                      </div>
-                      <div class="shorts-slide">
-                        <img class="shorts-poster" alt="" src="https://i.ytimg.com/vi/bKZvD47gdCw/hqdefault.jpg">
-                        <iframe data-shorts-id="bKZvD47gdCw" title="Student story 5" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                      </div>
-                      <div class="shorts-slide">
-                        <img class="shorts-poster" alt="" src="https://i.ytimg.com/vi/h9T2HVMWueU/hqdefault.jpg">
-                        <iframe data-shorts-id="h9T2HVMWueU" title="Student story 6" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                      </div>
-                      <div class="shorts-slide">
-                        <img class="shorts-poster" alt="" src="https://i.ytimg.com/vi/gVyZ33Em6Bg/hqdefault.jpg">
-                        <iframe data-shorts-id="gVyZ33Em6Bg" title="Student story 7" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                      </div>
-                      <div class="shorts-slide">
-                        <img class="shorts-poster" alt="" src="https://i.ytimg.com/vi/vVze6gsP3mU/hqdefault.jpg">
-                        <iframe data-shorts-id="vVze6gsP3mU" title="Student story 8" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                      </div>
-                    </div>
-                  </div>
-                  <button class="shorts-play" type="button" data-shorts-play aria-label="Play student story 1">
-                    <span class="shorts-play-icon" aria-hidden="true"></span>
-                  </button>
-                  <div class="shorts-pips" aria-label="Choose a student story">
-                    <button class="shorts-pip is-active" type="button" aria-label="Student story 1" aria-current="true" data-shorts-jump="0"></button>
-                    <button class="shorts-pip" type="button" aria-label="Student story 2" data-shorts-jump="1"></button>
-                    <button class="shorts-pip" type="button" aria-label="Student story 3" data-shorts-jump="2"></button>
-                    <button class="shorts-pip" type="button" aria-label="Student story 4" data-shorts-jump="3"></button>
-                    <button class="shorts-pip" type="button" aria-label="Student story 5" data-shorts-jump="4"></button>
-                    <button class="shorts-pip" type="button" aria-label="Student story 6" data-shorts-jump="5"></button>
-                    <button class="shorts-pip" type="button" aria-label="Student story 7" data-shorts-jump="6"></button>
-                    <button class="shorts-pip" type="button" aria-label="Student story 8" data-shorts-jump="7"></button>
-                  </div>
-                </div>
-                <div class="shorts-switch">
-                  <button class="testimonial-arrow" type="button" data-shorts-prev aria-label="Previous story" disabled>
-                    <span aria-hidden="true">↑</span>
-                  </button>
-                  <p class="shorts-hint">Swipe up for the next story</p>
-                  <button class="testimonial-arrow" type="button" data-shorts-next aria-label="Next story">
-                    <span aria-hidden="true">↓</span>
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <!--
-            <article class="testimonial-card" aria-hidden="true">
-              <div class="quote-mark" aria-hidden="true">&ldquo;</div>
-              <p class="testimonial-text">
-                The TTC program has been nothing short of a transformational journey. The classes we engaged in,
-                from Asanas to pranayama to meditation and all the lectures have helped me cultivate greater
-                discipline, balance and calm in my day to day life. Physically too, I am a lot more energetic and
-                stronger. I am amazed at how the principles and philosophy of yoga learnt during the program has
-                got effortlessly and seamlessly integrated into my daily life making me more self aware, mindful and
-                productive. It truly was one of the most amazing experiences of my life, layered with learnings,
-                some of which I am still processing.
-              </p>
-              <p class="testimonial-text">
-                Kudos to the SYGC team whose passion and commitment is just unparalleled. It's Arun and the team
-                of teachers and their expertise and dedication that make this program stand apart. I would highly
-                highly recommend this program to anyone looking to deepen their practice and improve the quality
-                of their life.
-              </p>
-              <div class="testimonial-author">— Deepthi</div>
-            </article>
-
-            <article class="testimonial-card" aria-hidden="true">
-              <div class="quote-mark" aria-hidden="true">&ldquo;</div>
-              <p class="testimonial-text">
-                It was a challenging experience but a rewarding one. I came to the course with a physical limitation
-                and an emotional burden and I left with insights to deal with both.
-              </p>
-              <p class="testimonial-text">
-                Arun Pandala is an exceptional master and teacher, and the team is very knowledgable and professional.
-                In what concerns the yoga teaching training, the standards are high and the team is very informative
-                and details oriented to ensure graduates are capable and ready to teach.
-              </p>
-              <p class="testimonial-text">
-                I lived with colleagues and teachers for a month and I feel I have a new family that I already miss.
-              </p>
-              <div class="testimonial-author">— Sulaf</div>
-            </article>
-
-            <article class="testimonial-card" aria-hidden="true">
-              <div class="quote-mark" aria-hidden="true">&ldquo;</div>
-              <p class="testimonial-text">
-                I came over from the US for this course very specifically because of my impression of the excellence
-                of the Gurgaon Sivananda teachers based on my online experiences with them. The course proved to
-                exceed my expectations. Everything was so well designed and created with intentional and positive
-                purpose. I was fully immersed in the ashram life while I was there and I grew both physically and
-                intellectually.
-              </p>
-              <p class="testimonial-text">
-                I knew that leaving the ashram and returning home to a different pace may be a challenge, and it
-                was, but the simplicity and profundity of the basis of the Sivananda system has provided a solid
-                foundation which I feel as an accessible grounding point.
-              </p>
-              <p class="testimonial-text">
-                I have an enhanced clarity that supports me in process and decision making. My experience was
-                absolutely enriching and I am grateful for the joy of further engaging with the new found community.
-              </p>
-              <div class="testimonial-author">— Andrea</div>
-            </article>
-            -->
-          </div>
-
-          <!--
-          <div class="testimonial-controls">
-            <button class="testimonial-arrow testimonial-arrow-prev" type="button" aria-label="Previous testimonial" data-carousel-prev>
-              <span aria-hidden="true">←</span>
-            </button>
-            <div class="testimonial-dots" aria-label="Choose a testimonial" data-carousel-dots>
-              <button class="testimonial-dot is-active" type="button" aria-label="Show student video stories" aria-current="true" data-carousel-dot="0"></button>
-              <button class="testimonial-dot" type="button" aria-label="Show Deepthi testimonial" data-carousel-dot="1"></button>
-              <button class="testimonial-dot" type="button" aria-label="Show Sulaf testimonial" data-carousel-dot="2"></button>
-              <button class="testimonial-dot" type="button" aria-label="Show Andrea testimonial" data-carousel-dot="3"></button>
-            </div>
-            <button class="testimonial-arrow testimonial-arrow-next" type="button" aria-label="Next testimonial" data-carousel-next>
-              <span aria-hidden="true">→</span>
-            </button>
-          </div>
-          -->
-        </div>
-
         </div>
       </div>
     </section>
@@ -1592,6 +1608,39 @@
     </footer>
     <script async src="https://www.instagram.com/embed.js"></script>
     <script>
+      if (document.documentElement.classList.contains("reveal-ready")) {
+        const revealSelector = [
+          ".section-header",
+          ".overview-text",
+          ".overview-image",
+          ".benefit-card",
+          ".teacher-card",
+          ".bento-item",
+          ".schedule-card",
+          ".testimonial-carousel",
+          ".price-card",
+          ".form-info",
+          ".application-form",
+          ".faq-live-hub",
+          ".faq-featured",
+          ".faq-category",
+          ".faq-contact"
+        ].join(", ");
+
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries
+            .filter((entry) => entry.isIntersecting)
+            .forEach((entry, entryIndex) => {
+              entry.target.style.setProperty("--reveal-delay", `${Math.min(entryIndex, 5) * 90}ms`);
+              entry.target.classList.add("is-revealed");
+              revealObserver.unobserve(entry.target);
+            });
+        }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+
+        document.querySelectorAll(revealSelector).forEach((item) => revealObserver.observe(item));
+      }
+    </script>
+    <script>
       const nav = document.querySelector("nav");
       const updateNavVisibility = () => {
         nav.classList.toggle("is-visible", window.scrollY > 80);
@@ -1623,7 +1672,7 @@
 
         if (!navButterfly) return;
         syncButterflies((butterfly) => {
-          butterfly.classList.remove("is-settling", "is-perched");
+          butterfly.classList.remove("is-settling", "is-perched", "is-on-apply");
           butterfly.style.removeProperty("--resting-flap-duration");
           butterfly.style.transform = "";
           butterfly.style.opacity = "";
@@ -2097,6 +2146,7 @@
           syncButterflies((butterfly) => {
             butterfly.classList.toggle("is-settling", isResting && now < settlingUntil);
             butterfly.classList.toggle("is-perched", isResting && now >= settlingUntil);
+            butterfly.classList.toggle("is-on-apply", isResting && perchMode === "apply-perched");
             butterfly.style.transform = butterflyTransform(
               position.x - origin.x,
               position.y - origin.y,
@@ -2170,7 +2220,7 @@
         });
       });
 
-      const expandableCards = Array.from(document.querySelectorAll(".bento-item, .teacher-card"));
+      const expandableCards = Array.from(document.querySelectorAll(".bento-item, .teacher-card, .benefit-card"));
       const usesTouchHover = window.matchMedia("(hover: none)").matches;
 
       if (usesTouchHover) {
@@ -2275,6 +2325,8 @@
           let pointerHandled = false;
           let wheelLock = false;
           let bumpTimer = 0;
+          let pointerStartSlide = null;
+          const wideStories = window.matchMedia("(min-width: 1025px)");
 
           const fitShorts = () => {
             const height = Math.round(phone.getBoundingClientRect().height);
@@ -2324,6 +2376,7 @@
 
             slides.forEach((slide, slideIndex) => {
               slide.setAttribute("aria-hidden", slideIndex === shortIndex ? "false" : "true");
+              slide.classList.toggle("is-current", slideIndex === shortIndex);
             });
 
             pips.forEach((pip, pipIndex) => {
@@ -2417,6 +2470,7 @@
             if (event.target.closest("[data-shorts-jump]")) return;
             pointerTracking = true;
             pointerStartedOnPlay = Boolean(event.target.closest("[data-shorts-play]"));
+            pointerStartSlide = event.target.closest(".shorts-slide");
             pointerStartX = event.clientX;
             pointerStartY = event.clientY;
             phone.setPointerCapture(event.pointerId);
@@ -2428,15 +2482,21 @@
 
             const distanceX = event.clientX - pointerStartX;
             const distanceY = event.clientY - pointerStartY;
+            const swipeDistance = wideStories.matches ? distanceX : distanceY;
+            const crossDistance = wideStories.matches ? distanceY : distanceX;
 
-            if (Math.abs(distanceY) > 48 && Math.abs(distanceY) > Math.abs(distanceX)) {
+            if (Math.abs(swipeDistance) > 48 && Math.abs(swipeDistance) > Math.abs(crossDistance)) {
               if (pointerStartedOnPlay) holdPointerHandled();
-              showShort(distanceY < 0 ? shortIndex + 1 : shortIndex - 1, isPlaying);
+              showShort(swipeDistance < 0 ? shortIndex + 1 : shortIndex - 1, isPlaying);
               return;
             }
 
             if (Math.abs(distanceX) < 12 && Math.abs(distanceY) < 12) {
               if (pointerStartedOnPlay) holdPointerHandled();
+              if (pointerStartSlide && pointerStartSlide !== slides[shortIndex]) {
+                showShort(slides.indexOf(pointerStartSlide), isPlaying);
+                return;
+              }
               toggleShort();
             }
           });
@@ -2455,10 +2515,12 @@
           });
 
           phone.addEventListener("wheel", (event) => {
+            if (wideStories.matches && Math.abs(event.deltaX) <= Math.abs(event.deltaY)) return;
             event.preventDefault();
-            if (wheelLock || Math.abs(event.deltaY) < 8) return;
+            const wheelDelta = wideStories.matches ? event.deltaX : event.deltaY;
+            if (wheelLock || Math.abs(wheelDelta) < 8) return;
             wheelLock = true;
-            showShort(event.deltaY > 0 ? shortIndex + 1 : shortIndex - 1, isPlaying);
+            showShort(wheelDelta > 0 ? shortIndex + 1 : shortIndex - 1, isPlaying);
             window.setTimeout(() => {
               wheelLock = false;
             }, 500);
@@ -2517,12 +2579,12 @@
 
           if (!cards[currentIndex].hasAttribute("data-shorts-card")) return;
 
-          if (event.key === "ArrowDown") {
+          if (event.key === "ArrowDown" || event.key === "ArrowRight") {
             event.preventDefault();
             stepShorts(1);
           }
 
-          if (event.key === "ArrowUp") {
+          if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
             event.preventDefault();
             stepShorts(-1);
           }
