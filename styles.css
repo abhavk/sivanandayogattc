@@ -1964,6 +1964,14 @@ textarea::placeholder {
   touch-action: none;
 }
 
+.shorts-phone.allow-horizontal-swipe {
+  touch-action: pan-y;
+}
+
+.shorts-phone.allow-horizontal-swipe * {
+  touch-action: auto;
+}
+
 .shorts-viewport {
   position: absolute;
   inset: 0;
@@ -2104,6 +2112,12 @@ textarea::placeholder {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .shorts-hint {
+    max-width: 11rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

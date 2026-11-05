@@ -846,7 +846,7 @@
                   <button class="testimonial-arrow" type="button" data-shorts-prev aria-label="Previous story" disabled>
                     <span aria-hidden="true">↑</span>
                   </button>
-                  <p class="shorts-hint">Swipe up for the next story</p>
+                  <p class="shorts-hint">Swipe for the next story</p>
                   <button class="testimonial-arrow" type="button" data-shorts-next aria-label="Next story">
                     <span aria-hidden="true">↓</span>
                   </button>
@@ -2266,8 +2266,13 @@
           const prevShort = shorts.querySelector("[data-shorts-prev]");
           const nextShort = shorts.querySelector("[data-shorts-next]");
           const pips = Array.from(shorts.querySelectorAll("[data-shorts-jump]"));
+          const shortHint = shorts.querySelector(".shorts-hint");
+          const prevShortIcon = prevShort?.querySelector("span");
+          const nextShortIcon = nextShort?.querySelector("span");
+          const mobileShortsQuery = window.matchMedia("(max-width: 768px)");
           let shortIndex = 0;
           let isPlaying = false;
+          let useHorizontalShorts = mobileShortsQuery.matches;
           let pointerStartX = 0;
           let pointerStartY = 0;
           let pointerTracking = false;
@@ -2276,9 +2281,18 @@
           let wheelLock = false;
           let bumpTimer = 0;
 
+          const syncShortsInteraction = () => {
+            useHorizontalShorts = mobileShortsQuery.matches;
+            phone.classList.toggle("allow-horizontal-swipe", useHorizontalShorts);
+            if (shortHint) shortHint.textContent = useHorizontalShorts ? "Swipe sideways for the next story" : "Swipe up for the next story";
+            if (prevShortIcon) prevShortIcon.textContent = useHorizontalShorts ? "←" : "↑";
+            if (nextShortIcon) nextShortIcon.textContent = useHorizontalShorts ? "→" : "↓";
+          };
+
           const fitShorts = () => {
             const height = Math.round(phone.getBoundingClientRect().height);
             if (height > 0) phone.style.setProperty("--shorts-frame", `${height}px`);
+            syncShortsInteraction();
           };
 
           const postCommand = (iframe, func) => {
@@ -2398,6 +2412,7 @@
           syncShorts();
           fitShorts();
           window.addEventListener("resize", fitShorts);
+          mobileShortsQuery.addEventListener?.("change", syncShortsInteraction);
 
           prevShort.addEventListener("click", () => showShort(shortIndex - 1, isPlaying));
           nextShort.addEventListener("click", () => showShort(shortIndex + 1, isPlaying));
@@ -2419,7 +2434,7 @@
             pointerStartedOnPlay = Boolean(event.target.closest("[data-shorts-play]"));
             pointerStartX = event.clientX;
             pointerStartY = event.clientY;
-            phone.setPointerCapture(event.pointerId);
+            if (!useHorizontalShorts) phone.setPointerCapture(event.pointerId);
           });
 
           phone.addEventListener("pointerup", (event) => {
@@ -2428,14 +2443,21 @@
 
             const distanceX = event.clientX - pointerStartX;
             const distanceY = event.clientY - pointerStartY;
+            const absX = Math.abs(distanceX);
+            const absY = Math.abs(distanceY);
 
-            if (Math.abs(distanceY) > 48 && Math.abs(distanceY) > Math.abs(distanceX)) {
+            if (useHorizontalShorts ? absX > 48 && absX > absY : absY > 48 && absY > absX) {
               if (pointerStartedOnPlay) holdPointerHandled();
-              showShort(distanceY < 0 ? shortIndex + 1 : shortIndex - 1, isPlaying);
+              showShort(
+                useHorizontalShorts
+                  ? (distanceX < 0 ? shortIndex + 1 : shortIndex - 1)
+                  : (distanceY < 0 ? shortIndex + 1 : shortIndex - 1),
+                isPlaying
+              );
               return;
             }
 
-            if (Math.abs(distanceX) < 12 && Math.abs(distanceY) < 12) {
+            if (absX < 12 && absY < 12) {
               if (pointerStartedOnPlay) holdPointerHandled();
               toggleShort();
             }
