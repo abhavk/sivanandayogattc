@@ -238,7 +238,7 @@
                     <span aria-hidden="true">↑</span>
                   </button>
                   <p class="shorts-hint">
-                    <span class="shorts-hint-touch">Swipe up for the next story</span>
+                    <span class="shorts-hint-touch">Swipe sideways for the next story</span>
                     <span class="shorts-hint-wide">Click a story or use the arrows</span>
                   </p>
                   <button class="testimonial-arrow" type="button" data-shorts-next aria-label="Next story">
@@ -2326,7 +2326,6 @@
           let wheelLock = false;
           let bumpTimer = 0;
           let pointerStartSlide = null;
-          const wideStories = window.matchMedia("(min-width: 1025px)");
 
           const fitShorts = () => {
             const height = Math.round(phone.getBoundingClientRect().height);
@@ -2473,7 +2472,16 @@
             pointerStartSlide = event.target.closest(".shorts-slide");
             pointerStartX = event.clientX;
             pointerStartY = event.clientY;
-            phone.setPointerCapture(event.pointerId);
+          });
+
+          phone.addEventListener("pointermove", (event) => {
+            if (!pointerTracking || phone.hasPointerCapture(event.pointerId)) return;
+
+            const distanceX = event.clientX - pointerStartX;
+            const distanceY = event.clientY - pointerStartY;
+            if (Math.abs(distanceX) > 12 && Math.abs(distanceX) > Math.abs(distanceY)) {
+              phone.setPointerCapture(event.pointerId);
+            }
           });
 
           phone.addEventListener("pointerup", (event) => {
@@ -2482,8 +2490,8 @@
 
             const distanceX = event.clientX - pointerStartX;
             const distanceY = event.clientY - pointerStartY;
-            const swipeDistance = wideStories.matches ? distanceX : distanceY;
-            const crossDistance = wideStories.matches ? distanceY : distanceX;
+            const swipeDistance = distanceX;
+            const crossDistance = distanceY;
 
             if (Math.abs(swipeDistance) > 48 && Math.abs(swipeDistance) > Math.abs(crossDistance)) {
               if (pointerStartedOnPlay) holdPointerHandled();
@@ -2515,9 +2523,9 @@
           });
 
           phone.addEventListener("wheel", (event) => {
-            if (wideStories.matches && Math.abs(event.deltaX) <= Math.abs(event.deltaY)) return;
+            if (Math.abs(event.deltaX) <= Math.abs(event.deltaY)) return;
             event.preventDefault();
-            const wheelDelta = wideStories.matches ? event.deltaX : event.deltaY;
+            const wheelDelta = event.deltaX;
             if (wheelLock || Math.abs(wheelDelta) < 8) return;
             wheelLock = true;
             showShort(wheelDelta > 0 ? shortIndex + 1 : shortIndex - 1, isPlaying);

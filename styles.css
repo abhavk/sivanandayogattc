@@ -2092,12 +2092,12 @@ textarea::placeholder {
   background-color: #1c140c;
   box-shadow: 0 18px 40px color-mix(in srgb, var(--black-amber) 16%, transparent);
   container-type: size;
-  touch-action: none;
+  touch-action: pan-y;
   user-select: none;
 }
 
 .shorts-phone * {
-  touch-action: none;
+  touch-action: pan-y;
 }
 
 .shorts-viewport {
@@ -2108,23 +2108,25 @@ textarea::placeholder {
 
 .shorts-track {
   display: flex;
-  flex-direction: column;
-  transform: translateY(calc(var(--shorts-index, 0) * -1 * var(--shorts-frame, 100cqh)));
+  flex-direction: row;
+  height: 100%;
+  transform: translateX(calc(var(--shorts-index, 0) * -1 * 100cqw));
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .shorts-track.is-bump-next {
-  transform: translateY(calc(var(--shorts-index, 0) * -1 * var(--shorts-frame, 100cqh) - 22px));
+  transform: translateX(calc(var(--shorts-index, 0) * -1 * 100cqw - 22px));
 }
 
 .shorts-track.is-bump-prev {
-  transform: translateY(calc(var(--shorts-index, 0) * -1 * var(--shorts-frame, 100cqh) + 22px));
+  transform: translateX(calc(var(--shorts-index, 0) * -1 * 100cqw + 22px));
 }
 
 .shorts-slide {
   position: relative;
-  flex: 0 0 var(--shorts-frame, 100cqh);
-  height: var(--shorts-frame, 100cqh);
+  flex: 0 0 100cqw;
+  width: 100cqw;
+  height: 100%;
 }
 
 .shorts-poster,
@@ -2250,6 +2252,11 @@ textarea::placeholder {
   display: none;
 }
 
+.shorts-switch .testimonial-arrow span {
+  display: inline-block;
+  transform: rotate(-90deg);
+}
+
 @media (min-width: 1025px) {
   .shorts-stack {
     width: 100%;
@@ -2368,11 +2375,6 @@ textarea::placeholder {
     width: 18px;
     height: 3px;
     background-color: var(--warm-gold);
-  }
-
-  .shorts-switch .testimonial-arrow span {
-    display: inline-block;
-    transform: rotate(-90deg);
   }
 
   .shorts-hint-touch {
